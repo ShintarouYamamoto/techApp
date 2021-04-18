@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="">変更</a>
+                    <a href="">真太郎だお</a>
                     
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
