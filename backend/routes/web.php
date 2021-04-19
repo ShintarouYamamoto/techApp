@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('before.main');
-});
+Route::get('/', 'UserController@index');
+
+Route::get('/buy', 'UserController@buy');
