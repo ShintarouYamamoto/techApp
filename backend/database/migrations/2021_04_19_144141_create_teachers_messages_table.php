@@ -18,6 +18,7 @@ class CreateTeachersMessagesTable extends Migration
             $table->string('subject', 255);
             $table->string('content', 255);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

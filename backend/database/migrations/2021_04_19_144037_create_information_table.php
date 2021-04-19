@@ -19,6 +19,7 @@ class CreateInformationTable extends Migration
             $table->string('content', 255);
             $table->integer('info_to');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
