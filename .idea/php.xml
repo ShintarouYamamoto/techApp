@@ -95,6 +95,7 @@
       <path value="$PROJECT_DIR$/backend/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/backend/vendor/jeroennoten/laravel-adminlte" />
       <path value="$PROJECT_DIR$/backend/vendor/almasaeed2010/adminlte" />
+      <path value="$PROJECT_DIR$/backend/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
