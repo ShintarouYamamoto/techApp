@@ -15,4 +15,17 @@ Route::get('/', 'UserController@index');
 
 Route::get('/buy', 'UserController@buy');
 
-Route::get('/admin', 'Admin\AdminController@index');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', 'Admin\AdminController@index');
+    Route::get('/information', 'Admin\InformationController@index')->name('information');
+    Route::get('/teachers_messages', 'Admin\TeachersMessagesController@index')->name('teachers_messages');
+    Route::get('/users', 'Admin\UsersController@index')->name('users');
+});
+
