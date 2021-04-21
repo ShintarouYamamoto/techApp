@@ -7,6 +7,7 @@
 
 @section('content')
 <div>
-    <h1>申し込みページ strip実装予定</h1>
+    <h1>申し込みページ stripe実装予定</h1>
+    <a href={{ route('main.top') }}>戻る</a>
 </div>
 @endsection
