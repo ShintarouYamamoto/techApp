@@ -14,3 +14,5 @@
 Route::get('/', 'UserController@index');
 
 Route::get('/buy', 'UserController@buy');
+
+Route::get('/admin', 'Admin\AdminController@index');
