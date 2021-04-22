@@ -18,7 +18,7 @@ class CreateRegistrationsTable extends Migration
             $table->string('mail', 255);
             $table->string('token', 255);
             $table->timestamps();
-            $table->softDeletes();
+            $table->softDeletes()->nullable();
         });
     }
 

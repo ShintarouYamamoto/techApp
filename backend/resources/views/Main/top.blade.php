@@ -10,6 +10,7 @@
     <h1>教室紹介ページ</h1>
 </div>
 <div>
-    <a href="/buy">申し込みページへ</a>
+    <a href={{ route('main.buy') }}>申し込みページへ</a>
+    <a href={{ route('login') }}>login</a>
 </div>
 @endsection

@@ -20,7 +20,7 @@ class CreateCoursesTable extends Migration
             $table->string('tel_no', 255);
             $table->string('parent_name', 255);
             $table->timestamps();
-            $table->softDeletes();
+            $table->softDeletes()->nullable();
         });
     }
 
