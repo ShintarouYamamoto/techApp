@@ -1,7 +1,7 @@
 <div>
-    @foreach ($informations as $information)
+    @foreach ($information as $info)
     <div class="list-group">
-        <a href="{{ url('/member/information', $information->id) }}" class="list-group-item list-group-item-action list-group-item-warning">{{ $information->created_at->format('Y/m/d') }} [{{ $information->subject }}]</a>
+        <a href="{{ url('/member/information', $info->id) }}" class="list-group-item list-group-item-action list-group-item-warning">{{ $info->created_at->format('Y/m/d') }} [{{ $info->subject }}]</a>
     </div>
     @endforeach
 </div>
