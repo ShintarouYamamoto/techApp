@@ -15,33 +15,27 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <div class="card-body">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <div class="input-group">
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="exampleInputFile">
-                            <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                        </div>
-                        <div class="input-group-append">
-                            <span class="input-group-text">Upload</span>
-                        </div>
+            <form action="{{ route('admin.information.store') }}">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="">タイトル</label>
+                        <input type="text" name="subject" class="form-control" id="subject" placeholder="タイトル">
+                    </div>
+                    <div class="form-group">
+                        <label for="">内容</label>
+                        <textarea name="content" class="form-control" id="content" cols="30" rows="10" placeholder="内容"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>提示クラス</label>
+                        <select name="info_to" class="form-control">
+                            <option value="0">全体</option>
+                            <option>クラス1</option>
+                        </select>
                     </div>
                 </div>
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-            </div>
-            <a href="" class="btn btn-info mt-3">投稿</a>
+                <button type="submit" href="" class="btn btn-info mt-3">投稿</button>
+                <a href="{{ route('admin.information') }}" class="btn btn-secondary mt-3">戻る</a>
+            </form>
         </div>
         <!-- /.card-body -->
 

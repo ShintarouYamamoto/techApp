@@ -21,4 +21,16 @@ class InformationController extends Controller
         return view('admin.information_create');
     }
 
+    public function store(Request $request){
+
+        $information = new Information;
+
+        $information->subject = $request->input('subject');
+        $information->content = $request->input('content');
+        $information->info_to = $request->input('info_to');
+        $information->save();
+
+        return redirect(route('admin.information.create'));
+    }
+
 }
