@@ -67,7 +67,7 @@
                     </tr>
                     </tbody>
                 </table>
-                <a href="" class="btn btn-info mt-3">新規作成</a>
+                <a href="{{ route('admin.information.create') }}" class="btn btn-info mt-3">新規作成</a>
             </div>
             <!-- /.card-body -->
 
