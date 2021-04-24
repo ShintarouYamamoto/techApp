@@ -18,7 +18,7 @@
                 <table class="table table-bordered">
                     <thead>
                     <tr>
-                        <th style="width: 5em">#</th>
+                        <th style="width: 5em">ID @sortablelink('id','↕︎')</th>
                         <th style="width: 20em">タイトル</th>
                         <th style="width: 20em">投稿日時</th>
                         <th style="width: 5em"></th>
@@ -29,13 +29,16 @@
                     <tr>
                         <td>{{ $info->id }}</td>
                         <td>{{ $info->subject }}</td>
-                        <td>{{ $info->crated_at }}</td>
-                        <td><a href="" class="btn btn-primary">編集</a></td>
+                        <td>{{ $info->created_at }}</td>
+                        <td><a href="{{ route('admin.information.edit',$info->id) }}" class="btn btn-primary btn-sm">編集</a></td>
                     </tr>
                     @endforeach
                     </tbody>
                 </table>
-                <a href="{{ route('admin.information.create') }}" class="btn btn-info mt-3">新規作成</a>
+                <div class="mt-3">
+                    <a href="{{ route('admin.information.create') }}" class="btn btn-info">新規作成</a>
+                    <div style="float:right">{{ $information->links() }}</div>
+                </div>
             </div>
             <!-- /.card-body -->
 
