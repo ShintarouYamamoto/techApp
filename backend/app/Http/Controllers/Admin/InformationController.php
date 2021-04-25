@@ -41,4 +41,16 @@ class InformationController extends Controller
         return view('admin.information_edit',['information' => $information]);
     }
 
+    public function update(Request $request){
+
+        $information = Information::find($request->id);
+
+        $information->subject = $request->input('subject');
+        $information->content = $request->input('content');
+        $information->info_to = $request->input('info_to');
+        $information->save();
+
+        return redirect(route('admin.information.edit',$request->id));
+    }
+
 }
