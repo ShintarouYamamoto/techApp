@@ -15,6 +15,13 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
+            @if(count($errors) > 0)
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            @endif
             <form action="{{ route('admin.information.store') }}">
                 <div class="card-body">
                     <div class="form-group">

@@ -7,16 +7,6 @@ use Illuminate\Foundation\Http\FormRequest;
 class InformationRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
-    {
-        return false;
-    }
-
-    /**
      * Get the validation rules that apply to the request.
      *
      * @return array
@@ -26,7 +16,16 @@ class InformationRequest extends FormRequest
         return [
             'subject' => ['required'],
             'content' => ['required'],
-            'info_to' => ['info_to'],
+            'info_to' => ['required'],
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            'subject' => 'タイトル',
+            'content' => '内容',
+            'info_to' => '提示クラス',
         ];
     }
 }

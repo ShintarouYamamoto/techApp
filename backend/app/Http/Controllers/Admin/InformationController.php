@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\InformationRequest;
 use App\Information;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,7 @@ class InformationController extends Controller
         return view('admin.information_create');
     }
 
-    public function store(Request $request){
+    public function store(InformationRequest $request){
 
         $information = new Information;
 
