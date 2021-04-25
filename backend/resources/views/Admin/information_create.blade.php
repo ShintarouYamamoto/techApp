@@ -26,11 +26,11 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="">タイトル</label>
-                        <input type="text" name="subject" class="form-control" id="subject" placeholder="タイトル">
+                        <input type="text" name="subject" class="form-control" id="subject" placeholder="タイトル" value="{{ old('subject') }}">
                     </div>
                     <div class="form-group">
                         <label for="">内容</label>
-                        <textarea name="content" class="form-control" id="content" cols="30" rows="10" placeholder="内容"></textarea>
+                        <textarea name="content" class="form-control" id="content" cols="30" rows="10" placeholder="内容">{{ old('content') }}</textarea>
                     </div>
                     <div class="form-group">
                         <label>提示クラス</label>

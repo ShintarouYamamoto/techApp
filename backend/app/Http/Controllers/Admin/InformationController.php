@@ -42,7 +42,7 @@ class InformationController extends Controller
         return view('admin.information_edit',['information' => $information]);
     }
 
-    public function update(Request $request){
+    public function update(InformationRequest $request){
 
         $information = Information::find($request->id);
 
