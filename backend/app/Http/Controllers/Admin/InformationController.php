@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\InformationRequest;
 use App\Information;
 use Illuminate\Http\Request;
 
@@ -10,8 +11,9 @@ class InformationController extends Controller
 {
     public function index(){
 
-        $information = Information::orderBy('created_at', 'desc')
-            ->paginate(10);
+        $information = Information::sortable()
+            ->orderBy('id', 'desc')
+            ->paginate(5);
 
         return view('admin.information', ['information' => $information]);
     }
@@ -21,7 +23,7 @@ class InformationController extends Controller
         return view('admin.information_create');
     }
 
-    public function store(Request $request){
+    public function store(InformationRequest $request){
 
         $information = new Information;
 
@@ -31,6 +33,25 @@ class InformationController extends Controller
         $information->save();
 
         return redirect(route('admin.information.create'));
+    }
+
+    public function edit($info_id){
+        $information = Information::where('id', $info_id)
+            ->firstOrFail();
+
+        return view('admin.information_edit',['information' => $information]);
+    }
+
+    public function update(Request $request){
+
+        $information = Information::find($request->id);
+
+        $information->subject = $request->input('subject');
+        $information->content = $request->input('content');
+        $information->info_to = $request->input('info_to');
+        $information->save();
+
+        return redirect(route('admin.information.edit',$request->id));
     }
 
 }

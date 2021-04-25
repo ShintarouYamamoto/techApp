@@ -100,6 +100,7 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/jeroennoten/laravel-adminlte" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/almasaeed2010/adminlte" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/laravel/ui" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/kyslik/column-sortable" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

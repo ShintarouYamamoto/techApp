@@ -29,6 +29,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/', 'Admin\InformationController@index')->name('top');
         Route::get('/create', 'Admin\InformationController@create')->name('create');
         Route::get('/store', 'Admin\InformationController@store')->name('store');
+        Route::get('/edit/{info_id}', 'Admin\InformationController@edit')->name('edit');
+        Route::get('/edit/', 'Admin\InformationController@update')->name('update');
     });
 
 
