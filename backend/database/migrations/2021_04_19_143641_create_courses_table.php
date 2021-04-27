@@ -17,8 +17,6 @@ class CreateCoursesTable extends Migration
             $table->bigIncrements('id');
             $table->string('course', 255);
             $table->string('class', 255);
-            $table->string('tel_no', 255);
-            $table->string('parent_name', 255);
             $table->timestamps();
             $table->softDeletes()->nullable();
         });

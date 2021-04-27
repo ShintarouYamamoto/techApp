@@ -3,22 +3,36 @@
 @section('title','メンバーページ')
 
 @section('css')
+<link rel="stylesheet" href="{{ asset('css/Member/top.css') }}">
 @endsection
 
 @section('content')
-<div>
-    <h1>ログイン後表示、メインページ</h1>
-</div>
+<div class="container">
 
-<a class="logout-button btn btn-success" role="button" rel="nofollow" data-method="POST" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">LOGOUT</a>
-<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
+    <div>
+        <h1>auth.login->Member.top</h1>
+    </div>
 
-@include('Parts.infoList')
+    <div>
+        <a class="logout-button btn btn-success" role="button" rel="nofollow" data-method="POST" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">LOGOUT</a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
+    </div>
 
-<div>
-    <a class="btn btn-primary" href="#" role="button">受講する</a>
-</div>
-<div>
-    <a class="btn btn-primary" href="#" role="button">mypage</a>
+    <div>
+        @foreach ($information as $info)
+        <div class="list-group">
+            <a href="{{ url('/member/information', $info->id) }}" class="list-group-item list-group-item-action list-group-item-warning">{{ $info->created_at->format('Y/m/d') }} [{{ $info->subject }}]</a>
+        </div>
+        @endforeach
+    </div>
+
+    <div>
+        <a class="btn btn-primary" href="{{ route('member.course') }}" role="button">受講する</a>
+    </div>
+
+    <div>
+        <a class="btn btn-primary" href="{{ route('member.user') }}" role="button">マイページへ</a>
+    </div>
+
 </div>
 @endsection
