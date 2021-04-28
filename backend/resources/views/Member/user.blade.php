@@ -17,7 +17,7 @@
         <p>{{$user->address}}</p>
         <p>{{$user->tel_no}}</p>
         <p>{{$user->parentname}}</p>
-        <p>{{$user->student_name}}</p>
+        <p>{{$user->parent_name}}</p>
     </div>
 
     <div>
