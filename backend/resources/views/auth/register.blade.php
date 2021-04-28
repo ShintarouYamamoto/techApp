@@ -6,10 +6,8 @@
 @endsection
 
 @section('content')
-<div>
+<div class="container">
     <h1>登録フォーム</h1>
-</div>
-<div>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
