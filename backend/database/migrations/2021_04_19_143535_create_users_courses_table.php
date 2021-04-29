@@ -14,7 +14,6 @@ class CreateUsersCoursesTable extends Migration
     public function up()
     {
         Schema::create('users_courses', function (Blueprint $table) {
-            $table->bigIncrements('id');
             $table->integer('user_id');
             $table->integer('course_id');
             $table->timestamps();

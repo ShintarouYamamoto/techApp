@@ -19,21 +19,26 @@ Route::prefix('main')->name('main.')->group(function () {
 Route::prefix('member')->name('member.')->group(function () {
     Route::get('/', 'MemberController@index')->name('top');
     Route::get('/information/{info_id}', 'InformationController@index')->name('information');
+
+    Route::get('/course', 'CourseController@index')->name('course');
+    Route::get('/course/class', 'CourseController@class')->name('class');
+
+    Route::get('/user', 'UserController@index')->name('user');
+    Route::get('/user/edit', 'UserController@edit')->name('edit');
+    Route::post('/user/edit', 'UserController@update')->name('update');
 });
 
 Route::prefix('admin')->name('admin.')->group(function () {
-
 
     Route::get('/', 'Admin\AdminController@index');
 
     Route::prefix('information')->name('information.')->group(function () {
         Route::get('/', 'Admin\InformationController@index')->name('top');
         Route::get('/create', 'Admin\InformationController@create')->name('create');
-        Route::get('/store', 'Admin\InformationController@store')->name('store');
+        Route::post('/store', 'Admin\InformationController@store')->name('store');
         Route::get('/edit/{info_id}', 'Admin\InformationController@edit')->name('edit');
-        Route::get('/edit/', 'Admin\InformationController@update')->name('update');
+        Route::post('/edit/', 'Admin\InformationController@update')->name('update');
     });
-
 
     Route::get('/information', 'Admin\InformationController@index')->name('information');
     Route::get('/teachers_messages', 'Admin\TeachersMessagesController@index')->name('teachers_messages');
