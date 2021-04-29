@@ -14,7 +14,7 @@
     </div>
 
     <div>
-        <a class="logout-button btn btn-success" role="button" rel="nofollow" data-method="POST" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">LOGOUT</a>
+        <a class="logout-button btn btn-success" role="button" rel="nofollow" data-method="POST" href="{{ route('member.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">LOGOUT</a>
         <form id="logout-form" action="{{ route('member.logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
     </div>
 
