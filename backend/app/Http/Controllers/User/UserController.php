@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\ControllersUser;
 
 use Illuminate\Http\Request;
 
+use App\Http\Controllers\Controller;
 use Auth;
 use App\User;
 use App\Http\Requests\UserUpdateRequest;
