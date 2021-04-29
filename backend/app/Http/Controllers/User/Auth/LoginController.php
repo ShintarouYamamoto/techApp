@@ -33,6 +33,7 @@ class LoginController extends Controller
      *
      * @return void
      */
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
@@ -42,4 +43,10 @@ class LoginController extends Controller
     {
         return redirect(route('main.top'));
     }
+
+    public function showLoginForm()
+    {
+        return view('member.auth.login');
+    }
+
 }
