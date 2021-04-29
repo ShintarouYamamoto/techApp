@@ -10,23 +10,37 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
+
+Route::namespace('User')->prefix('member')->name('member.')->group(function () {
+
+    // ログイン認証関連
+    Auth::routes([
+        'register' => true,
+        'reset'    => false,
+        'verify'   => false
+    ]);
+
+    // ログイン認証後
+    Route::middleware('auth:user')->group(function () {
+
+        Route::get('/', 'MemberController@index')->name('top');
+        Route::get('/information/{info_id}', 'InformationController@index')->name('information');
+
+        Route::get('/course', 'CourseController@index')->name('course');
+        Route::get('/course/class', 'CourseController@class')->name('class');
+
+        Route::get('/user', 'UserController@index')->name('user');
+        Route::get('/user/edit', 'UserController@edit')->name('edit');
+        Route::post('/user/edit', 'UserController@update')->name('update');
+
+    });
+});
 
 Route::prefix('main')->name('main.')->group(function () {
-    Route::get('/', 'MainController@index')->name('top');
-    Route::get('/buy', 'MainController@buy')->name('buy');
+    Route::get('/', 'Main\MainController@index')->name('top');
+    Route::get('/buy', 'Main\MainController@buy')->name('buy');
 });
-Route::prefix('member')->name('member.')->group(function () {
-    Route::get('/', 'MemberController@index')->name('top');
-    Route::get('/information/{info_id}', 'InformationController@index')->name('information');
 
-    Route::get('/course', 'CourseController@index')->name('course');
-    Route::get('/course/class', 'CourseController@class')->name('class');
-
-    Route::get('/user', 'UserController@index')->name('user');
-    Route::get('/user/edit', 'UserController@edit')->name('edit');
-    Route::post('/user/edit', 'UserController@update')->name('update');
-});
 
 Route::prefix('admin')->name('admin.')->group(function () {
 
