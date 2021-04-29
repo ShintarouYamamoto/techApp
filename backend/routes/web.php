@@ -20,6 +20,7 @@ Route::prefix('member')->name('member.')->group(function () {
     Route::get('/', 'MemberController@index')->name('top');
     Route::get('/information/{info_id}', 'InformationController@index')->name('information');
 });
+
 Route::prefix('admin')->name('admin.')->group(function () {
 
 
