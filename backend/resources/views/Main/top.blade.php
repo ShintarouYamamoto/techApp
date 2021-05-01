@@ -11,6 +11,6 @@
 </div>
 <div>
     <a href={{ route('main.buy') }}>申し込みページへ</a>
-    <a href={{ route('login') }}>login</a>
+    <a href={{ route('member.login') }}>login</a>
 </div>
 @endsection
