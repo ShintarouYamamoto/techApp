@@ -49,7 +49,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::prefix('information')->name('information.')->group(function () {
         Route::get('/', 'Admin\InformationController@index')->name('top');
         Route::get('/create', 'Admin\InformationController@create')->name('create');
-        Route::post('/store', 'Admin\InformationController@store')->name('store');
+        Route::post('/store$', 'Admin\InformationController@store')->name('store');
         Route::get('/edit/{info_id}', 'Admin\InformationController@edit')->name('edit');
         Route::post('/edit/', 'Admin\InformationController@update')->name('update');
     });

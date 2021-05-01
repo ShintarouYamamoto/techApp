@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\InformationRequest;
 use App\Information;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use DB;
 
 class InformationController extends Controller
 {
@@ -25,14 +27,22 @@ class InformationController extends Controller
 
     public function store(InformationRequest $request){
 
-        $information = new Information;
+        DB::beginTransaction();
+        try {
+            $information = new Information;
 
-        $information->subject = $request->input('subject');
-        $information->content = $request->input('content');
-        $information->info_to = $request->input('info_to');
-        $information->save();
+            $information->subject = $request->input('subject');
+            $information->content = $request->input('content');
+            $information->info_to = $request->input('info_to');
+            $information->save();
+            DB::commit();
+            $message = 'インフォメーションを投稿しました。';
+        } catch (\Exception $e) {
+            $message = 'インフォメーションの投稿に失敗しました。';
+            DB::rollback();
+        }
 
-        return redirect(route('admin.information.create'));
+        return redirect(route('admin.information.create'))->with('message',$message);
     }
 
     public function edit($info_id){
@@ -44,12 +54,17 @@ class InformationController extends Controller
 
     public function update(InformationRequest $request){
 
-        $information = Information::find($request->id);
+        try {
+            $information = Information::find($request->id);
 
-        $information->subject = $request->input('subject');
-        $information->content = $request->input('content');
-        $information->info_to = $request->input('info_to');
-        $information->save();
+            $information->subject = $request->input('subject');
+            $information->content = $request->input('content');
+            $information->info_to = $request->input('info_to');
+            $information->save();
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+        }
 
         return redirect(route('admin.information.edit',$request->id));
     }

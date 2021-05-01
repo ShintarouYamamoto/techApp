@@ -22,6 +22,11 @@
             @endforeach
         </ul>
         @endif
+            @if (session('message'))
+                <div class="alert alert-success">
+                    {{ session('message') }}
+                </div>
+            @endif
         <form method="POST" action="{{ route('admin.information.store') }}">
             @csrf
             <div class="card-body">
