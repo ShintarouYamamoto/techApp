@@ -26,8 +26,7 @@ Route::namespace('User')->prefix('member')->name('member.')->group(function () {
         Route::get('/', 'MemberController@index')->name('top');
         Route::get('/information/{info_id}', 'InformationController@index')->name('information');
 
-        Route::get('/course', 'CourseController@index')->name('course');
-        Route::get('/course/class', 'CourseController@class')->name('class');
+        Route::get('/class', 'ClassController@index')->name('class')->middleware('class');;
 
         Route::get('/user', 'UserController@index')->name('user');
         Route::get('/user/edit', 'UserController@edit')->name('edit');

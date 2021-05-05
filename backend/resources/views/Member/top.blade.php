@@ -27,7 +27,7 @@
     </div>
 
     <div>
-        <a class="btn btn-primary" href="{{ route('member.course') }}" role="button">受講する</a>
+        <a class="btn btn-primary" href="{{ route('member.class') }}" role="button">受講する</a>
     </div>
 
     <div>
