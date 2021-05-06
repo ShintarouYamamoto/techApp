@@ -26,6 +26,6 @@ class ClassController extends Controller
 
         $class_messages = TeachersMessage::where('class_to', $user_class->class)->orderBy('created_at', 'desc')->paginate(2);
 
-        return view('Member.class', ['class_messages' => $class_messages]);
+        return view('Member.class', ['class_messages' => $class_messages], ['user_class' => $user_class]);
     }
 }

@@ -9,7 +9,7 @@
 <div class="container">
 
     <div>
-        <h1>Member.top->Member.class</h1>
+        <h1 class="text-center">{{$user_class->class}}クラスのお部屋</h1>
     </div>
 
     <div>
