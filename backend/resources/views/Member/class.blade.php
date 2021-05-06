@@ -3,7 +3,6 @@
 @section('title','クラスページ')
 
 @section('css')
-
 @endsection
 
 @section('content')

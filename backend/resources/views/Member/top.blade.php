@@ -2,8 +2,6 @@
 
 @section('title','メンバーページ')
 
-@include('Parts.navbar')
-
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/Member/top.css') }}">
 @endsection
@@ -12,7 +10,7 @@
 <div class="container main-content">
 
     <div>
-        <h1>ようこそ、{{Auth::user()->student_name}}君！</h1>
+        <h1 class="text-center">ようこそ、{{Auth::user()->student_name}}君！</h1>
     </div>
 
     <div>
@@ -24,7 +22,9 @@
         {{ $information->links() }}
     </div>
 
-    <a class="class-button" href="{{ route('member.class') }}" role="button">受講する</a>
-
+    <div class="text-center">
+        <a class="class-button" href="{{ route('member.class') }}" role="button">受講する</a>
+    </div>
+    
 </div>
 @endsection

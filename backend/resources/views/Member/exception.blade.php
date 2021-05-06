@@ -3,7 +3,6 @@
 @section('title','エラーページ')
 
 @section('css')
-
 @endsection
 
 @section('content')
@@ -14,7 +13,7 @@
     </div>
 
     <div>
-       <p>{{$message}}</p>
+        <p>{{$message}}</p>
     </div>
 
     <div>

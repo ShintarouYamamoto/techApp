@@ -23,17 +23,17 @@
             {{--メールアドレス--}}
             <div class="form-group">
                 <label for="email" class="">メールアドレス</label>
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"  value="{{ old('email',$user->email) }}" autocomplete="email">
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email',$user->email) }}" autocomplete="email">
             </div>
             {{--住所--}}
             <div class="form-group">
                 <label for="address" class="">住所</label>
-                <input id="address" type="" class="form-control @error('address') is-invalid @enderror" name="address"  value="{{ old('address',$user->address) }}" autocomplete="address">
+                <input id="address" type="" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address',$user->address) }}" autocomplete="address">
             </div>
             {{--電話番号--}}
             <div class="form-group">
                 <label for="tel_no" class="">電話番号</label>
-                <input id="tel_no" type="tel" class="form-control @error('tel_no') is-invalid @enderror" name="tel_no"  value="{{ old('tel_no',$user->tel_no) }}" autocomplete="tel">
+                <input id="tel_no" type="tel" class="form-control @error('tel_no') is-invalid @enderror" name="tel_no" value="{{ old('tel_no',$user->tel_no) }}" autocomplete="tel">
             </div>
             {{--保護者名--}}
             <div class="form-group">
