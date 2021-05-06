@@ -4,7 +4,6 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TeacherMessage extends Model
+class TeachersMessage extends Model
 {
-    //
 }

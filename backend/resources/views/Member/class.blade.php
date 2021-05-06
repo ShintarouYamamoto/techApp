@@ -14,7 +14,12 @@
     </div>
 
     <div>
-        
+        @foreach ($class_messages as $class_message)
+        <div class="list-group">
+            <p>{{$class_message->subject}}</p>
+        </div>
+        @endforeach
+        {{ $class_messages->links() }}
     </div>
 
     <div>
