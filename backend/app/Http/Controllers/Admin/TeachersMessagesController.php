@@ -44,4 +44,30 @@ class TeachersMessagesController extends Controller
 
         return redirect(route('admin.teachers_messages.create'))->with('message',$message);
     }
+
+    public function edit($message_id){
+
+        $teachers_message = TeachersMessage::where('id', $message_id)
+            ->firstOrFail();
+
+        return view('admin.teachers_messages_edit',['teachers_message' => $teachers_message]);
+    }
+
+    public function update(TeachersMessageRequest $request){
+
+        DB::beginTransaction();
+        try {
+            $information = TeachersMessage::find($request->id);
+
+            $information->subject = $request->input('subject');
+            $information->content = $request->input('content');
+            $information->info_to = $request->input('info_to');
+            $information->save();
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+        }
+
+        return redirect(route('admin.information.edit',$request->id));
+    }
 }

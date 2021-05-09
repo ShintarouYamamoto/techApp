@@ -30,13 +30,16 @@
                         <td>{{ $message->id }}</td>
                         <td>{{ $message->subject }}</td>
                         <td>{{ $message->created_at }}</td>
-                        <td><a href="{{ route('admin.information.edit',$message->id) }}" class="btn btn-primary btn-sm">編集</a></td>
+                        <td><a href="{{ route('admin.teachers_messages.edit',$message->id) }}" class="btn btn-primary btn-sm">編集</a></td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
-            <a href="{{ route('admin.teachers_messages.create') }}" class="btn btn-info mt-3">新規作成</a>
-            <div style="float:right">{{ $teachers_messages->links() }}</div>
+            <div class="mt-3">
+                <a href="{{ route('admin.teachers_messages.create') }}" class="btn btn-info">新規作成</a>
+                <div style="float:right">{{ $teachers_messages->links() }}</div>
+            </div>
+
         </div>
         <!-- /.card-body -->
 
