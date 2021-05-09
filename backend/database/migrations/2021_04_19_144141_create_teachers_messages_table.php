@@ -17,7 +17,7 @@ class CreateTeachersMessagesTable extends Migration
             $table->bigIncrements('id');
             $table->string('subject', 255);
             $table->string('content', 255);
-            $table->string('class_to', 255);
+            $table->integer('class_to');
             $table->timestamps();
             $table->softDeletes()->nullable();
         });

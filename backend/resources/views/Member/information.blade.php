@@ -2,6 +2,7 @@
 
 @section('title','お知らせ')
 
+
 @section('css')
 @endsection
 
