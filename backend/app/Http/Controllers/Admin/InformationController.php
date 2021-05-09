@@ -54,6 +54,7 @@ class InformationController extends Controller
 
     public function update(InformationRequest $request){
 
+        DB::beginTransaction();
         try {
             $information = Information::find($request->id);
 
@@ -67,6 +68,20 @@ class InformationController extends Controller
         }
 
         return redirect(route('admin.information.edit',$request->id));
+    }
+
+    public function destroy(InformationRequest $request){
+
+        DB::beginTransaction();
+        try {
+
+            Information::find($request->id)->delete();
+
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+        }
+
     }
 
 }
