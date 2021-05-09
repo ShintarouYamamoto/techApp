@@ -18,14 +18,14 @@
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th style="width: 10px">#</th>
-                    <th>タイトル</th>
-                    <th>投稿日時</th>
-                    <th style="width: 40px"></th>
+                    <th style="width: 5em">ID @sortablelink('id','↕︎')</th>
+                    <th style="width: 20em">タイトル</th>
+                    <th style="width: 20em">投稿日時</th>
+                    <th style="width: 5em"></th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach( $teacher_messages as $message )
+                @foreach( $teachers_messages as $message )
                     <tr>
                         <td>{{ $message->id }}</td>
                         <td>{{ $message->subject }}</td>
@@ -35,8 +35,8 @@
                 @endforeach
                 </tbody>
             </table>
-            <a href="{{ route('teacher_messages.create') }}" class="btn btn-info mt-3">新規作成</a>
-            <div style="float:right">{{ $teacher_messages->links() }}</div>
+            <a href="{{ route('admin.teachers_messages.create') }}" class="btn btn-info mt-3">新規作成</a>
+            <div style="float:right">{{ $teachers_messages->links() }}</div>
         </div>
         <!-- /.card-body -->
 
