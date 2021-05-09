@@ -1,0 +1,19 @@
+.navbar-brand{
+    font-size: xx-large!important;
+}
+.mypage-button {
+    padding: 18px 20px;
+    text-decoration: none !important;
+    color: white!important;
+    background-color: blue;
+    font-size: xx-large;
+    font-weight: bold;
+}
+.logout-button {
+    padding: 18px 20px;
+    text-decoration: none !important;
+    color: white!important;
+    background-color: greenyellow;
+    font-size: xx-large;
+    font-weight: bold;
+}
