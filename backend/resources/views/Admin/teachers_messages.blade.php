@@ -25,17 +25,18 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach( $teacher_messages as $info )
+                @foreach( $teacher_messages as $message )
                     <tr>
-                        <td>{{ $info->id }}</td>
-                        <td>{{ $info->subject }}</td>
-                        <td>{{ $info->created_at }}</td>
-                        <td><a href="{{ route('admin.information.edit',$info->id) }}" class="btn btn-primary btn-sm">編集</a></td>
+                        <td>{{ $message->id }}</td>
+                        <td>{{ $message->subject }}</td>
+                        <td>{{ $message->created_at }}</td>
+                        <td><a href="{{ route('admin.information.edit',$message->id) }}" class="btn btn-primary btn-sm">編集</a></td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
             <a href="" class="btn btn-info mt-3">新規作成</a>
+            <div style="float:right">{{ $teacher_messages->links() }}</div>
         </div>
         <!-- /.card-body -->
 
