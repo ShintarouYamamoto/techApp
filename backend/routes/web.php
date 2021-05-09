@@ -53,7 +53,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/edit/', 'Admin\InformationController@update')->name('update');
     });
 
-    Route::get('/information', 'Admin\InformationController@index')->name('information');
+
     Route::get('/teachers_messages', 'Admin\TeachersMessagesController@index')->name('teachers_messages');
     Route::get('/users', 'Admin\UsersController@index')->name('users');
 });

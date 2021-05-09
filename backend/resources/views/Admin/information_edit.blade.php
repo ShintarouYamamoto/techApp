@@ -36,7 +36,7 @@
             </div>
             <input hidden type="text" name="id" value={{ $information->id }}>
             <button type="submit" href="" class="btn btn-info mt-3">保存</button>
-            <a href="{{ route('admin.information') }}" class="btn btn-secondary mt-3">戻る</a>
+            <a href="{{ route('admin.information.top') }}" class="btn btn-secondary mt-3">戻る</a>
         </form>
     </div>
     <!-- /.card-body -->
