@@ -61,13 +61,15 @@ class TeachersMessagesController extends Controller
 
             $information->subject = $request->input('subject');
             $information->content = $request->input('content');
-            $information->info_to = $request->input('info_to');
+            $information->class_to = $request->input('class_to');
             $information->save();
             DB::commit();
+            $message = '講師メッセージを編集しました。';
         } catch (\Exception $e) {
             DB::rollback();
+            $message = '講師メッセージの編集に失敗しました。';
         }
 
-        return redirect(route('admin.information.edit',$request->id));
+        return redirect(route('admin.teachers_messages.edit',$request->id))->with('message',$message);
     }
 }

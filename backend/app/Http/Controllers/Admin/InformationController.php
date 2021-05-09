@@ -63,11 +63,13 @@ class InformationController extends Controller
             $information->info_to = $request->input('info_to');
             $information->save();
             DB::commit();
+            $message = 'インフォメーションを編集しました。';
         } catch (\Exception $e) {
             DB::rollback();
+            $message = 'インフォメーションの投稿に失敗しました。';
         }
 
-        return redirect(route('admin.information.edit',$request->id));
+        return redirect(route('admin.information.edit',$request->id))->with('message',$message);
     }
 
     public function destroy(InformationRequest $request){

@@ -15,6 +15,18 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
+        @if(count($errors) > 0)
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
+        @if (session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
         <form method="POST" action="{{ route('admin.information.update') }}">
             @csrf
             <div class="card-body">

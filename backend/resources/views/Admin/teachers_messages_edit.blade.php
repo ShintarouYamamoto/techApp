@@ -15,6 +15,18 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
+            @if(count($errors) > 0)
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            @endif
+            @if (session('message'))
+                <div class="alert alert-success">
+                    {{ session('message') }}
+                </div>
+            @endif
             <form method="POST" action="{{ route('admin.teachers_messages.update') }}">
                 @csrf
                 <div class="card-body">
@@ -28,14 +40,13 @@
                     </div>
                     <div class="form-group">
                         <label>提示クラス</label>
-                        <select name="info_to" class="form-control">
-                            <option value="0" @if($teachers_message->info_to == 0) selected @endif>全体</option>
-                            <option>クラス1</option>
+                        <select name="class_to" class="form-control">
+                            <option value="1" @if($teachers_message->class_to == 1) selected @endif>クラス1</option>
                         </select>
                     </div>
                 </div>
                 <input hidden type="text" name="id" value={{ $teachers_message->id }}>
-                <button type="submit" href="" class="btn btn-info mt-3">保存</button>
+                <button type="submit" class="btn btn-info mt-3">保存</button>
                 <a href="{{ route('admin.teachers_messages.top') }}" class="btn btn-secondary mt-3">戻る</a>
             </form>
         </div>
