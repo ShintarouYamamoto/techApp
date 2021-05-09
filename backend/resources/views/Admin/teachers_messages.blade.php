@@ -35,7 +35,7 @@
                 @endforeach
                 </tbody>
             </table>
-            <a href="" class="btn btn-info mt-3">新規作成</a>
+            <a href="{{ route('teacher_messages.create') }}" class="btn btn-info mt-3">新規作成</a>
             <div style="float:right">{{ $teacher_messages->links() }}</div>
         </div>
         <!-- /.card-body -->

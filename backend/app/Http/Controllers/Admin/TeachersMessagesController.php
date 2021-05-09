@@ -16,4 +16,9 @@ class TeachersMessagesController extends Controller
 
         return view('admin.teachers_messages',['teacher_messages' => $teacher_messages]);
     }
+
+    public function create(){
+
+        return view('admin.teachers_messages_create');
+    }
 }
