@@ -14,17 +14,19 @@
     </div>
 
     <div>
-        @foreach ($information as $info)
         <div class="list-group">
-            <a href="{{ url('/member/information', $info->id) }}" class="list-group-item list-group-item-action list-group-item-warning">{{ $info->created_at->format('Y/m/d') }} [{{ $info->subject }}]</a>
+            <ul>
+                @foreach ($information as $info)
+                <li><a href="{{ url('/member/information', $info->id) }}" class="">{{ $info->created_at->format('Y/m/d') }} [{{ $info->subject }}]</a></li>
+                @endforeach
+            </ul>
+            {{ $information->links() }}
         </div>
-        @endforeach
-        {{ $information->links() }}
     </div>
 
     <div class="text-center">
         <a class="class-button" href="{{ route('member.class') }}" role="button">受講する</a>
     </div>
-    
+
 </div>
 @endsection
