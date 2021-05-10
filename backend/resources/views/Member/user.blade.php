@@ -3,24 +3,29 @@
 @section('title','マイページ')
 
 @section('css')
+<link rel="stylesheet" href="{{ asset('css/Member/user.css') }}">
 @endsection
 
 @section('content')
-<div class="container">
-    <div>
-        <h1>マイページ</h1>
+<div class="container main-content">
+    <div class="theme">
+        <h1 class="text-center">マイページ</h1>
     </div>
 
-    <div>
-        <p>{{$user->student_name}}</p>
-        <p>{{$user->email}}</p>
-        <p>{{$user->address}}</p>
-        <p>{{$user->tel_no}}</p>
-        <p>{{$user->parentname}}</p>
-        <p>{{$user->parent_name}}</p>
+    <div class="card mx-auto border-dark">
+        <div class="card-header">
+            あなたの情報
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="fas fa-child fa-fw"></i>{{$user->student_name}}</li>
+            <li class="list-group-item"><i class="fas fa-envelope fa-fw"></i>{{$user->email}}</li>
+            <li class="list-group-item"><i class="fas fa-map-marker-alt fa-fw"></i>{{$user->address}}</li>
+            <li class="list-group-item"><i class="fas fa-phone fa-fw"></i>{{$user->tel_no}}</li>
+            <li class="list-group-item"><i class="fas fa-user fa-fw"></i>{{$user->parent_name}}</li>
+        </ul>
     </div>
 
-    <div>
+    <div class="button-group text-center">
         <a class="btn btn-primary" href="{{ route('member.edit') }}" role="button">編集する</a>
         <a class="btn btn-primary" href="{{ route('member.top') }}" role="button">戻る</a>
     </div>
