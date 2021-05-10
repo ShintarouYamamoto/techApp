@@ -12,7 +12,7 @@ class MemberController extends Controller
     public function index()
     {
         $information = Information::orderBy('created_at', 'desc')
-            ->paginate(12);
+            ->paginate(8);
 
         return view('Member.top', ['information' => $information]);
     }

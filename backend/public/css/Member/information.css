@@ -1,0 +1,30 @@
+.main-content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.theme {
+    margin-bottom: 60px;
+}
+.card {
+    margin-bottom: 50px;
+}
+.card-header {
+    font-weight: bold;
+    font-size: x-large;
+}
+.return-button {
+    display: inline-block;
+    text-align: left;
+    border: 2px solid blue;
+    font-size: 30px;
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+.return-button:hover {
+    background-color: blue;
+    border-color: rgb(54, 54, 240);
+    color: #fff;
+}
