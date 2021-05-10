@@ -5,10 +5,13 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Kyslik\ColumnSortable\Sortable;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use Sortable;
+    public $sortable = ['id'];
 
     /**
      * The attributes that are mass assignable.
