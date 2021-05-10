@@ -7,8 +7,15 @@
 }
 .card {
     margin-bottom: 50px;
+    width: 500px;
 }
 .card-header {
     font-weight: bold;
     font-size: x-large;
+}
+.form-group{
+    margin-bottom: 20px;
+}
+.button-group{
+    margin: 40px 0;
 }
