@@ -54,6 +54,7 @@ class InformationController extends Controller
 
     public function update(InformationRequest $request){
 
+        DB::beginTransaction();
         try {
             $information = Information::find($request->id);
 
@@ -62,11 +63,27 @@ class InformationController extends Controller
             $information->info_to = $request->input('info_to');
             $information->save();
             DB::commit();
+            $message = 'インフォメーションを編集しました。';
+        } catch (\Exception $e) {
+            DB::rollback();
+            $message = 'インフォメーションの投稿に失敗しました。';
+        }
+
+        return redirect(route('admin.information.edit',$request->id))->with('message',$message);
+    }
+
+    public function destroy(InformationRequest $request){
+
+        DB::beginTransaction();
+        try {
+
+            Information::find($request->id)->delete();
+
+            DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
         }
 
-        return redirect(route('admin.information.edit',$request->id));
     }
 
 }

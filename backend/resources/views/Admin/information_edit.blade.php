@@ -15,6 +15,18 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
+        @if(count($errors) > 0)
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
+        @if (session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
         <form method="POST" action="{{ route('admin.information.update') }}">
             @csrf
             <div class="card-body">
@@ -36,7 +48,7 @@
             </div>
             <input hidden type="text" name="id" value={{ $information->id }}>
             <button type="submit" href="" class="btn btn-info mt-3">保存</button>
-            <a href="{{ route('admin.information') }}" class="btn btn-secondary mt-3">戻る</a>
+            <a href="{{ route('admin.information.top') }}" class="btn btn-secondary mt-3">戻る</a>
         </form>
     </div>
     <!-- /.card-body -->
