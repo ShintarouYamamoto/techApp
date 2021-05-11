@@ -11,6 +11,7 @@
 
     <div class="theme text-center">
         <h1>編集ページ</h1>
+        <p>{{$message}}</p>
     </div>
 
     <div class="card border-dark mb-3 mx-auto">

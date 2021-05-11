@@ -36,12 +36,12 @@ class UserUpdateRequest extends FormRequest
     public function attributes()
     {
         return [
-            'student_name' => '生徒姓',
+            'student_surname' => '生徒姓',
             'student_name' => '生徒名',
             'email' => 'メールアドレス',
             'address' => '住所',
             'tel_no' => '電話番号',
-            'parent_name' => '保護者姓',
+            'parent_surname' => '保護者姓',
             'parent_name' => '保護者名',
         ];
     }

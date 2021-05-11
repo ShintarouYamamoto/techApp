@@ -5,6 +5,9 @@
 .theme {
     margin-bottom: 60px;
 }
+.theme p{
+    color: red;
+}
 .card {
     margin-bottom: 50px;
     width: 500px;
@@ -28,6 +31,7 @@
     transition: 0.5s;
     font-weight: bold;
     font-size: x-large;
+    outline: none!important; 
 }
 .update-button:hover {
     background-color: cornflowerblue;
