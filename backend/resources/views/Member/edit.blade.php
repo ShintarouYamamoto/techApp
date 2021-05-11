@@ -47,8 +47,8 @@
                     <input id="parent_name" type="" class="form-control @error('parent_name') is-invalid @enderror" name="parent_name" value="{{ old('parent_name',$user->parent_name) }}">
                 </div>
 
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary text-center">更新</button>
+                <div class="form-group text-center">
+                    <button type="submit" class="update-button">更新</button>
                 </div>
 
             </form>
@@ -56,7 +56,7 @@
     </div>
 
     <div class="button-group text-center">
-        <a class="btn btn-primary" href="{{ route('member.user') }}" role="button">戻る</a>
+        <a class="return-button" href="{{ route('member.user') }}" role="button">戻る</a>
     </div>
 </div>
 

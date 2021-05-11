@@ -1,19 +1,27 @@
-.navbar-brand{
-    font-size: xx-large!important;
+.navbar-brand {
+    font-size: xx-large !important;
 }
 .mypage-button {
     padding: 18px 20px;
     text-decoration: none !important;
-    color: white!important;
+    color: white !important;
     background-color: blue;
-    font-size: xx-large;
+    transition: 0.5s;
     font-weight: bold;
+    font-size: xx-large;
+}
+.mypage-button:hover {
+    background-color: cornflowerblue;
 }
 .logout-button {
     padding: 18px 20px;
     text-decoration: none !important;
-    color: white!important;
+    color: white !important;
     background-color: greenyellow;
     font-size: xx-large;
     font-weight: bold;
+    transition: 0.5s;
+}
+.logout-button:hover {
+    background-color: rgb(214, 255, 153);
 }

@@ -26,8 +26,8 @@
     </div>
 
     <div class="button-group text-center">
-        <a class="btn btn-primary" href="{{ route('member.edit') }}" role="button">編集する</a>
-        <a class="btn btn-primary" href="{{ route('member.top') }}" role="button">戻る</a>
+        <a class="edit-button" href="{{ route('member.edit') }}" role="button">編集する</a>
+        <a class="return-button" href="{{ route('member.top') }}" role="button">戻る</a>
     </div>
 </div>
 @endsection
