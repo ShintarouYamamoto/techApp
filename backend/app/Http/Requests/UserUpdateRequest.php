@@ -13,7 +13,7 @@ class UserUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,21 +24,25 @@ class UserUpdateRequest extends FormRequest
     public function rules()
     {
         return [
+            'student_surname' => ['string', 'max:255'],
             'student_name' => ['string', 'max:255'],
             'email' => ['string', 'email', 'max:255'],
             'address' => ['string', 'max:255'],
             'tel_no' => ['string', 'max:255'],
+            'parent_surname' => ['string', 'max:255'],
             'parent_name' => ['string', 'max:255'],
         ];
     }
     public function attributes()
     {
         return [
-            'student_name' => '生徒氏名',
+            'student_name' => '生徒姓',
+            'student_name' => '生徒名',
             'email' => 'メールアドレス',
             'address' => '住所',
             'tel_no' => '電話番号',
-            'parent_name' => '保護者氏名',
+            'parent_name' => '保護者姓',
+            'parent_name' => '保護者名',
         ];
     }
 }

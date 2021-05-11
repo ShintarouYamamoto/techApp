@@ -27,10 +27,12 @@ class UserController extends Controller
     public function update(UserUpdateRequest $request)
     {
         $user = Auth::user();
+        $user->student_name = $request->input('student_surname');
         $user->student_name = $request->input('student_name');
         $user->email = $request->input('email');
         $user->address = $request->input('address');
         $user->tel_no = $request->input('tel_no');
+        $user->parent_name = $request->input('parent_surname');
         $user->parent_name = $request->input('parent_name');
         $user->save();
 
