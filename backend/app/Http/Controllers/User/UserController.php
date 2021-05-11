@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
 use App\User;
+use App\Course;
+use App\UsersCourse;
 use App\Http\Requests\UserUpdateRequest;
 use DB;
 
@@ -16,7 +18,17 @@ class UserController extends Controller
     {
         $user = Auth::user();
 
-        return view('Member.user', ['user' => $user]);
+        try {
+            $user_course = UsersCourse::where('user_id', Auth::id())->firstOrFail();
+
+            $user_class = Course::where('course', 1)->where('id', $user_course->course_id)->firstOrFail();
+
+            $user_class = $user_class->class;
+        } catch (\Exception $e) {
+            $user_class = "未配属";
+        }
+
+        return view('Member.user', ['user' => $user], ['user_class' => $user_class]);
     }
     public function edit()
     {

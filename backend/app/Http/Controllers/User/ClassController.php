@@ -14,11 +14,10 @@ class ClassController extends Controller
 {
     public function index()
     {
-        try{
+        try {
             $user_course = UsersCourse::where('user_id', Auth::id())->firstOrFail();
-    
-            $user_class = Course::where('id', $user_course->course_id)->firstOrFail();
-    
+
+            $user_class = Course::where('course', 1)->where('id', $user_course->course_id)->firstOrFail();
         } catch (\Exception $e) {
             $message = 'クラスが存在していません。お問い合わせ下さい。';
             return view('Member.exception', ['message' => $message]);
