@@ -11,16 +11,22 @@
 
     <div class="theme text-center">
         <h1>編集ページ</h1>
+        <p>{{$message}}</p>
     </div>
 
     <div class="card border-dark mb-3 mx-auto">
 
         <div class="card-header">情報を編集する</div>
-    
+
         <div class="card-body text-dark">
             <form method="POST" action="{{ route('member.update') }}">
                 @csrf
 
+                {{--生徒姓--}}
+                <div class="form-group">
+                    <label for="student_surname" class="">生徒姓</label>
+                    <input id="student_surname" class="form-control @error('student_surname') is-invalid @enderror" name="student_surname" value="{{ old('student_surname',$user->student_surname) }}" autocomplete="name">
+                </div>
                 {{--生徒名--}}
                 <div class="form-group">
                     <label for="student_name" class="">生徒名</label>
@@ -41,14 +47,19 @@
                     <label for="tel_no" class="">電話番号</label>
                     <input id="tel_no" type="tel" class="form-control @error('tel_no') is-invalid @enderror" name="tel_no" value="{{ old('tel_no',$user->tel_no) }}" autocomplete="tel">
                 </div>
+                {{--保護者姓--}}
+                <div class="form-group">
+                    <label for="parent_surname" class="">保護者性</label>
+                    <input id="parent_surname" type="" class="form-control @error('parent_surname') is-invalid @enderror" name="parent_surname" value="{{ old('parent_surname',$user->parent_surname) }}">
+                </div>
                 {{--保護者名--}}
                 <div class="form-group">
                     <label for="parent_name" class="">保護者名</label>
                     <input id="parent_name" type="" class="form-control @error('parent_name') is-invalid @enderror" name="parent_name" value="{{ old('parent_name',$user->parent_name) }}">
                 </div>
 
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary text-center">更新</button>
+                <div class="form-group text-center">
+                    <button type="submit" class="update-button">更新</button>
                 </div>
 
             </form>
@@ -56,7 +67,7 @@
     </div>
 
     <div class="button-group text-center">
-        <a class="btn btn-primary" href="{{ route('member.user') }}" role="button">戻る</a>
+        <a class="return-button" href="{{ route('member.user') }}" role="button">戻る</a>
     </div>
 </div>
 

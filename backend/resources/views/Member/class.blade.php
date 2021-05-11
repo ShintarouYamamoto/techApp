@@ -3,6 +3,7 @@
 @section('title','クラスページ')
 
 @section('css')
+<link rel="stylesheet" href="{{ asset('css/Member/class.css') }}">
 @endsection
 
 @section('content')
@@ -22,7 +23,7 @@
     </div>
 
     <div>
-        <a class="btn btn-primary" href="{{ route('member.top') }}" role="button">戻る</a>
+        <a class="return-button" href="{{ route('member.top') }}" role="button">戻る</a>
     </div>
 
 </div>

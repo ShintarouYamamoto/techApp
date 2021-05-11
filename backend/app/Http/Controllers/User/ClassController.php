@@ -14,7 +14,7 @@ class ClassController extends Controller
 {
     public function index()
     {
-        try{
+        try {
             $user_course = UsersCourse::where('user_id', Auth::id())->firstOrFail();
 
             $user_class = Course::where('course',1)//TODO:コースが増えた時には受け取った値を入れる
@@ -31,3 +31,4 @@ class ClassController extends Controller
         return view('Member.class', ['class_messages' => $class_messages], ['user_class' => $user_class]);
     }
 }
+

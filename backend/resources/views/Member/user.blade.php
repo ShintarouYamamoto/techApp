@@ -17,17 +17,18 @@
             あなたの情報
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><i class="fas fa-child fa-fw"></i>{{$user->student_name}}</li>
-            <li class="list-group-item"><i class="fas fa-envelope fa-fw"></i>{{$user->email}}</li>
-            <li class="list-group-item"><i class="fas fa-map-marker-alt fa-fw"></i>{{$user->address}}</li>
-            <li class="list-group-item"><i class="fas fa-phone fa-fw"></i>{{$user->tel_no}}</li>
-            <li class="list-group-item"><i class="fas fa-user fa-fw"></i>{{$user->parent_name}}</li>
+            <li class="list-group-item"><i class="fas fa-child fa-fw"></i> {{$user->student_surname}} {{$user->student_name}}</li>
+            <li class="list-group-item"><i class="fas fa-school fa-fw"></i> あなたのクラスは {{$user_class}} です</li>
+            <li class="list-group-item"><i class="fas fa-envelope fa-fw"></i> {{$user->email}}</li>
+            <li class="list-group-item"><i class="fas fa-map-marker-alt fa-fw"></i> {{$user->address}}</li>
+            <li class="list-group-item"><i class="fas fa-phone fa-fw"></i> {{$user->tel_no}}</li>
+            <li class="list-group-item"><i class="fas fa-user fa-fw"></i> {{$user->parent_surname}} {{$user->parent_name}}</li>
         </ul>
     </div>
 
     <div class="button-group text-center">
-        <a class="btn btn-primary" href="{{ route('member.edit') }}" role="button">編集する</a>
-        <a class="btn btn-primary" href="{{ route('member.top') }}" role="button">戻る</a>
+        <a class="edit-button" href="{{ route('member.edit') }}" role="button">編集する</a>
+        <a class="return-button" href="{{ route('member.top') }}" role="button">戻る</a>
     </div>
 </div>
 @endsection
