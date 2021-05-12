@@ -51,6 +51,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/store', 'Admin\InformationController@store')->name('store');
         Route::get('/edit/{info_id}', 'Admin\InformationController@edit')->name('edit');
         Route::post('/edit/', 'Admin\InformationController@update')->name('update');
+        Route::post('/delete', 'Admin\InformationController@destroy')->name('delete');
     });
 
     Route::prefix('teachers_messages')->name('teachers_messages.')->group(function () {
@@ -58,7 +59,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/create', 'Admin\TeachersMessagesController@create')->name('create');
         Route::post('/store', 'Admin\TeachersMessagesController@store')->name('store');
         Route::get('/edit/{message_id}', 'Admin\TeachersMessagesController@edit')->name('edit');
-        Route::post('/edit/', 'Admin\TeachersMessagesController@update')->name('update');
+        Route::post('/edit', 'Admin\TeachersMessagesController@update')->name('update');
     });
 
     Route::get('/users', 'Admin\UsersController@index')->name('users');

@@ -72,17 +72,17 @@ class InformationController extends Controller
         return redirect(route('admin.information.edit',$request->id))->with('message',$message);
     }
 
-    public function destroy(InformationRequest $request){
+    public function destroy(Request $request){
 
         DB::beginTransaction();
         try {
-
-            Information::find($request->id)->delete();
-
+            Information::destroy($request->id);
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
         }
+
+        return redirect(route('admin.information.top'));
 
     }
 

@@ -72,4 +72,6 @@ class TeachersMessagesController extends Controller
 
         return redirect(route('admin.teachers_messages.edit',$request->id))->with('message',$message);
     }
+
+
 }
