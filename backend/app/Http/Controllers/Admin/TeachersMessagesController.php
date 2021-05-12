@@ -73,5 +73,19 @@ class TeachersMessagesController extends Controller
         return redirect(route('admin.teachers_messages.edit',$request->id))->with('message',$message);
     }
 
+    public function destroy(Request $request){
+
+        DB::beginTransaction();
+        try {
+            TeachersMessage::destroy($request->id);
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+        }
+
+        return redirect(route('admin.teachers_messages.top'));
+
+    }
+
 
 }

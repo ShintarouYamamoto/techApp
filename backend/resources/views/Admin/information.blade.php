@@ -36,7 +36,7 @@
                         </td>
                     </tr>
 
-                    <!-- Modal -->
+                    <!-- 削除Modal -->
                     <div class="modal fade" id="Modal{{ $info->id }}" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
