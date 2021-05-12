@@ -18,56 +18,27 @@
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th style="width: 10px">#</th>
-                    <th>タイトル</th>
-                    <th>投稿日時</th>
-                    <th style="width: 40px"></th>
+                    <th style="width: 5em">ID @sortablelink('id','↕︎')</th>
+                    <th style="width: 10em">生徒の名前</th>
+                    <th style="width: 10em">email</th>
+                    <th style="width: 10em">電話番号</th>
+                    <th style="width: 10em">登録日時</th>
+                    <th style="width: 5em">詳細</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>Update software</td>
-                    <td>
-                        <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                        </div>
-                    </td>
-                    <td><span class="badge bg-danger">55%</span></td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Clean database</td>
-                    <td>
-                        <div class="progress progress-xs">
-                            <div class="progress-bar bg-warning" style="width: 70%"></div>
-                        </div>
-                    </td>
-                    <td><span class="badge bg-warning">70%</span></td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>Cron job running</td>
-                    <td>
-                        <div class="progress progress-xs progress-striped active">
-                            <div class="progress-bar bg-primary" style="width: 30%"></div>
-                        </div>
-                    </td>
-                    <td><span class="badge bg-primary">30%</span></td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Fix and squish bugs</td>
-                    <td>
-                        <div class="progress progress-xs progress-striped active">
-                            <div class="progress-bar bg-success" style="width: 90%"></div>
-                        </div>
-                    </td>
-                    <td><span class="badge bg-success">90%</span></td>
-                </tr>
+                @foreach( $users as $user )
+                    <tr>
+                        <td>{{ $user->id }}</td>
+                        <td>{{ $user->student_name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->tel_no }}</td>
+                        <td>{{ $user->created_at }}</td>
+                        <td><a href="" class="btn btn-primary btn-sm">詳細</a></td>
+                    </tr>
+                @endforeach
                 </tbody>
             </table>
-            <a href="" class="btn btn-info mt-3">新規作成</a>
         </div>
         <!-- /.card-body -->
 
