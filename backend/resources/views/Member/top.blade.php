@@ -10,7 +10,7 @@
 <div class="container main-content">
 
     <div class="theme">
-        <h1 class="text-center">ようこそ、{{Auth::user()->student_name}}君！</h1>
+        <h1 class="text-center">ようこそ、{{Auth::user()->student_firstname}}君！</h1>
     </div>
 
 

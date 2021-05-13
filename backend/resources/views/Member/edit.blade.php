@@ -11,7 +11,9 @@
 
     <div class="theme text-center">
         <h1>編集ページ</h1>
-        <p>{{$message}}</p>
+        @if(session('message'))
+        <p>{{session('message')}}</p>
+        @endif
     </div>
 
     <div class="card border-dark mb-3 mx-auto">
@@ -24,13 +26,23 @@
 
                 {{--生徒姓--}}
                 <div class="form-group">
-                    <label for="student_surname" class="">生徒姓</label>
-                    <input id="student_surname" class="form-control @error('student_surname') is-invalid @enderror" name="student_surname" value="{{ old('student_surname',$user->student_surname) }}" autocomplete="name">
+                    <label for="student_lastname" class="">生徒姓</label>
+                    <input id="student_lastname" class="form-control @error('student_lastname') is-invalid @enderror" name="student_lastname" value="{{ old('student_lastname',$user->student_lastname) }}">
+                </div>
+                {{--生徒姓フリガナ--}}
+                <div class="form-group">
+                    <label for="student_lastname_kana" class="">生徒姓フリガナ</label>
+                    <input id="student_lastname_kana" class="form-control @error('student_lastname_kana') is-invalid @enderror" name="student_lastname_kana" value="{{ old('student_lastname_kana',$user->student_lastname_kana) }}">
                 </div>
                 {{--生徒名--}}
                 <div class="form-group">
-                    <label for="student_name" class="">生徒名</label>
-                    <input id="student_name" class="form-control @error('student_name') is-invalid @enderror" name="student_name" value="{{ old('student_name',$user->student_name) }}" autocomplete="name">
+                    <label for="student_firstname" class="">生徒名</label>
+                    <input id="student_firstname" class="form-control @error('student_firstname') is-invalid @enderror" name="student_firstname" value="{{ old('student_firstname',$user->student_firstname) }}">
+                </div>
+                {{--生徒名フリガナ--}}
+                <div class="form-group">
+                    <label for="student_firstname_kana" class="">生徒名フリガナ</label>
+                    <input id="student_firstname_kana" class="form-control @error('student_firstname_kana') is-invalid @enderror" name="student_firstname_kana" value="{{ old('student_firstname_kana',$user->student_firstname_kana) }}">
                 </div>
                 {{--メールアドレス--}}
                 <div class="form-group">
@@ -49,13 +61,23 @@
                 </div>
                 {{--保護者姓--}}
                 <div class="form-group">
-                    <label for="parent_surname" class="">保護者性</label>
-                    <input id="parent_surname" type="" class="form-control @error('parent_surname') is-invalid @enderror" name="parent_surname" value="{{ old('parent_surname',$user->parent_surname) }}">
+                    <label for="parent_lastname" class="">保護者性</label>
+                    <input id="parent_lastname" type="" class="form-control @error('parent_lastname') is-invalid @enderror" name="parent_lastname" value="{{ old('parent_lastname',$user->parent_lastname) }}">
+                </div>
+                {{--保護者姓フリガナ--}}
+                <div class="form-group">
+                    <label for="parent_lastname_kana" class="">保護者性フリガナ</label>
+                    <input id="parent_lastname_kana" type="" class="form-control @error('parent_lastname_kana') is-invalid @enderror" name="parent_lastname_kana" value="{{ old('parent_lastname_kana',$user->parent_lastname_kana) }}">
                 </div>
                 {{--保護者名--}}
                 <div class="form-group">
-                    <label for="parent_name" class="">保護者名</label>
-                    <input id="parent_name" type="" class="form-control @error('parent_name') is-invalid @enderror" name="parent_name" value="{{ old('parent_name',$user->parent_name) }}">
+                    <label for="parent_firstname" class="">保護者名</label>
+                    <input id="parent_firstname" type="" class="form-control @error('parent_firstname') is-invalid @enderror" name="parent_firstname" value="{{ old('parent_firstname',$user->parent_firstname) }}">
+                </div>
+                {{--保護者名フリガナ--}}
+                <div class="form-group">
+                    <label for="parent_firstname_kana" class="">保護者名フリガナ</label>
+                    <input id="parent_firstname_kana" type="" class="form-control @error('parent_firstname_kana') is-invalid @enderror" name="parent_firstname_kana" value="{{ old('parent_firstname_kana',$user->parent_firstname_kana) }}">
                 </div>
 
                 <div class="form-group text-center">
