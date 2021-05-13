@@ -28,14 +28,13 @@ class UserController extends Controller
             $user_class = "未配属";
         }
 
-        return view('Member.user', ['user' => $user], ['user_class' => $user_class]);
+        return view('Member.user', ['user' => $user, 'user_class' => $user_class]);
     }
     public function edit()
     {
         $user = Auth::user();
-        $message = "";
 
-        return view('Member.edit', ['message' => $message], ['user' => $user]);
+        return view('Member.edit', ['user' => $user]);
     }
     public function update(UserUpdateRequest $request)
     {
@@ -57,6 +56,6 @@ class UserController extends Controller
             DB::rollback();
         }
 
-        return view('Member.edit', ['message' => $message], ['user' => $user]);
+        return redirect(route('member.edit', ['user' => $user]))->with('message', $message);
     }
 }
