@@ -23,7 +23,7 @@ class UserController extends Controller
 
             $user_class = Course::where('course', 1)->where('id', $user_course->course_id)->firstOrFail();
 
-            $user_class = $user_class->class;
+            $user_class = $user_class->class_id;
         } catch (\Exception $e) {
             $user_class = "未配属";
         }
@@ -41,13 +41,17 @@ class UserController extends Controller
         DB::beginTransaction();
         try {
             $user = Auth::user();
-            $user->student_name = $request->input('student_surname');
-            $user->student_name = $request->input('student_name');
+            $user->student_lastname = $request->input('student_lastname');
+            $user->student_lastname_kana = $request->input('student_lastname_kana');
+            $user->student_firstname = $request->input('student_firstname');
+            $user->student_firstname_kana = $request->input('student_firstname_kana');
             $user->email = $request->input('email');
             $user->address = $request->input('address');
             $user->tel_no = $request->input('tel_no');
-            $user->parent_name = $request->input('parent_surname');
-            $user->parent_name = $request->input('parent_name');
+            $user->parent_lastname = $request->input('parent_lastname');
+            $user->parent_lastname_kana = $request->input('parent_lastname_kana');
+            $user->parent_firstname = $request->input('parent_firstname');
+            $user->parent_firstname_kana = $request->input('parent_firstname_kana');
             $user->save();
             DB::commit();
             $message = '更新完了';
