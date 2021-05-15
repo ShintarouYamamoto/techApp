@@ -17,4 +17,11 @@ class UsersController extends Controller
         return view('admin.users',['users' => $users]);
 
     }
+
+    public function detail($user_id){
+        $user = User::where('id',$user_id)
+            ->firstOrFail();
+
+        return view('admin.user_detail',['user' => $user]);
+    }
 }
