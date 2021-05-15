@@ -45,6 +45,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/', 'Admin\AdminController@index');
 
+
+    Route::prefix('users')->name('users.')->group(function () {
+        Route::get('/', 'Admin\UsersController@index')->name('users');
+    });
+
+    Route::prefix('class')->name('class.')->group(function () {
+        Route::get('/', 'Admin\ClassController@index')->name('top');
+    });
+
     Route::prefix('information')->name('information.')->group(function () {
         Route::get('/', 'Admin\InformationController@index')->name('top');
         Route::get('/create', 'Admin\InformationController@create')->name('create');
@@ -62,6 +71,4 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/edit', 'Admin\TeachersMessagesController@update')->name('update');
         Route::post('/delete', 'Admin\TeachersMessagesController@destroy')->name('delete');
     });
-
-    Route::get('/users', 'Admin\UsersController@index')->name('users');
 });

@@ -65,7 +65,7 @@
             </table>
             <div class="mt-3">
                 <a href="{{ route('admin.teachers_messages.create') }}" class="btn btn-info">新規作成</a>
-                <div style="float:right">{{$message->appends(request()->input())->links()}}</div>
+                <div style="float:right">{{$teachers_messages->appends(request()->input())->links()}}</div>
             </div>
 
         </div>
