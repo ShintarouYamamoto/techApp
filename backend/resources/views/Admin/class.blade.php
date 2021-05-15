@@ -32,11 +32,15 @@
                         <td>{{ $class->course }}</td>
                         <td>{{ $class->class_id }}</td>
                         <td>{{ $class->class_name }}</td>
-                        <td><a href="" class="btn btn-primary btn-sm">詳細</a></td>
+                        <td><a href="" class="btn btn-primary btn-xs">詳細</a></td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
+            <div class="mt-3">
+                <a href="{{ route('admin.class.create') }}" class="btn btn-info">新規作成</a>
+                <div style="float:right">{{$classes->appends(request()->input())->links()}}</div>
+            </div>
         </div>
         <!-- /.card-body -->
 

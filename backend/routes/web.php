@@ -47,11 +47,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 
     Route::prefix('users')->name('users.')->group(function () {
-        Route::get('/', 'Admin\UsersController@index')->name('users');
+        Route::get('/', 'Admin\UsersController@index')->name('top');
     });
 
     Route::prefix('class')->name('class.')->group(function () {
         Route::get('/', 'Admin\ClassController@index')->name('top');
+        Route::get('/create', 'Admin\ClassController@create')->name('create');
+        Route::post('/store', 'Admin\ClassController@store')->name('store');
     });
 
     Route::prefix('information')->name('information.')->group(function () {

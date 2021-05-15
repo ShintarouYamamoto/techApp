@@ -34,7 +34,7 @@
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->tel_no }}</td>
                         <td>{{ $user->created_at }}</td>
-                        <td><a href="" class="btn btn-primary btn-sm">詳細</a></td>
+                        <td><a href="" class="btn btn-primary btn-xs">詳細</a></td>
                     </tr>
                 @endforeach
                 </tbody>
