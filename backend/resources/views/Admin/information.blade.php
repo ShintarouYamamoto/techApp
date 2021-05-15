@@ -65,7 +65,7 @@
                 </table>
                 <div class="mt-3">
                     <a href="{{ route('admin.information.create') }}" class="btn btn-info">新規作成</a>
-                    <div style="float:right">{{ $information->links() }}</div>
+                    <div style="float:right">{{$information->appends(request()->input())->links()}}</div>
                 </div>
             </div>
             <!-- /.card-body -->

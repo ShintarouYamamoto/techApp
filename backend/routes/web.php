@@ -45,12 +45,27 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/', 'Admin\AdminController@index');
 
+
+    Route::prefix('users')->name('users.')->group(function () {
+        Route::get('/', 'Admin\UsersController@index')->name('top');
+    });
+
+    Route::prefix('class')->name('class.')->group(function () {
+        Route::get('/', 'Admin\ClassController@index')->name('top');
+        Route::get('/create', 'Admin\ClassController@create')->name('create');
+        Route::post('/store', 'Admin\ClassController@store')->name('store');
+        Route::get('/edit/{class_id}', 'Admin\ClassController@edit')->name('edit');
+        Route::post('/update', 'Admin\ClassController@update')->name('update');
+        Route::post('/delete', 'Admin\ClassController@destroy')->name('delete');
+        Route::get('/users/{class_id}', 'Admin\ClassController@users')->name('users');
+    });
+
     Route::prefix('information')->name('information.')->group(function () {
         Route::get('/', 'Admin\InformationController@index')->name('top');
         Route::get('/create', 'Admin\InformationController@create')->name('create');
         Route::post('/store', 'Admin\InformationController@store')->name('store');
         Route::get('/edit/{info_id}', 'Admin\InformationController@edit')->name('edit');
-        Route::post('/edit/', 'Admin\InformationController@update')->name('update');
+        Route::post('/edit', 'Admin\InformationController@update')->name('update');
         Route::post('/delete', 'Admin\InformationController@destroy')->name('delete');
     });
 
@@ -62,6 +77,4 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/edit', 'Admin\TeachersMessagesController@update')->name('update');
         Route::post('/delete', 'Admin\TeachersMessagesController@destroy')->name('delete');
     });
-
-    Route::get('/users', 'Admin\UsersController@index')->name('users');
 });

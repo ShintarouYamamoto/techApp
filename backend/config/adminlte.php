@@ -257,8 +257,14 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => '会員管理',
+            'text'        => '生徒管理',
             'url'         => 'admin/users',
+            'icon'        => 'far fa-fw fa-file',
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'クラス管理',
+            'url'         => 'admin/class',
             'icon'        => 'far fa-fw fa-file',
             'label_color' => 'success',
         ],
