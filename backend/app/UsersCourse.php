@@ -13,5 +13,8 @@ class UsersCourse extends Model
         'course_id',
     ];
     public $incrementing = false;
-    
+
+    public function course(){
+        return $this->hasOne('App\Course', 'id', 'course_id');
+    }
 }
