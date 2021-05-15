@@ -22,7 +22,7 @@
                     <th>コースID</th>
                     <th>クラスID</th>
                     <th>クラス名</th>
-                    <th colspan="3">詳細</th>
+                    <th colspan="3">操作</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -32,7 +32,8 @@
                         <td>{{ $class->course }}</td>
                         <td>{{ $class->class_id }}</td>
                         <td>{{ $class->class_name }}</td>
-                        <td><a href="{{ route('admin.class.edit',$class->id) }}" class="btn btn-primary btn-xs">詳細</a></td>
+                        <td><a href="{{ route('admin.class.edit',$class->id) }}" class="btn btn-primary btn-xs">編集</a></td>
+                        <td><a href="{{ route('admin.class.users',$class->id) }}" class="btn btn-success btn-xs">詳細</a></td>
                         <td>
                             <button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#Modal{{ $class->id }}">削除</button>
                         </td>

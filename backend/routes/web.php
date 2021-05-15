@@ -57,6 +57,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/edit/{class_id}', 'Admin\ClassController@edit')->name('edit');
         Route::post('/update', 'Admin\ClassController@update')->name('update');
         Route::post('/delete', 'Admin\ClassController@destroy')->name('delete');
+        Route::get('/users/{class_id}', 'Admin\ClassController@users')->name('users');
     });
 
     Route::prefix('information')->name('information.')->group(function () {

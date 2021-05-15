@@ -11,7 +11,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">生徒管理</h3>
+            <h3 class="card-title">{{ $course->class_name }}クラスの生徒達</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -27,7 +27,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach( $users as $user )
+                @foreach( $class_users as $user )
                     <tr>
                         <td>{{ $user->id }}</td>
                         <td>{{ $user->student_lastname }} {{ $user->student_firstname }}</td>

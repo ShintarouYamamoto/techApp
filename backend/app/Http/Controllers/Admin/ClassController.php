@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Course;
 use App\Http\Requests\ClassRequest;
+use App\User;
+use App\UsersCourse;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use DB;
@@ -85,5 +87,30 @@ class ClassController extends Controller
 
         return redirect(route('admin.class.top'));
 
+    }
+
+    public function users($class_id){
+
+        try {
+            //クラス取得
+            $course = Course::find($class_id);
+
+            //クラスに所属している生徒を取得
+            $users_classes = UsersCourse::where('user_id',$class_id)
+                ->get();
+            $users_id[] = array();
+            foreach ($users_classes as $users_class) {
+                $users_id[] = $users_class->user_id;
+            }
+            $class_users = User::where('id',$users_id)->get();
+
+        } catch (\Exception $e) {
+
+        }
+
+        return view('admin.class_users',[
+            'class_users' => $class_users,
+            'course' => $course,
+        ]);
     }
 }
