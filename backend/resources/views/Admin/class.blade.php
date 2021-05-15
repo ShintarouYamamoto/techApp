@@ -33,7 +33,19 @@
                         <td>{{ $class->class_id }}</td>
                         <td>{{ $class->class_name }}</td>
                         <td><a href="{{ route('admin.class.edit',$class->id) }}" class="btn btn-primary btn-xs">編集</a></td>
-                        <td><a href="{{ route('admin.class.users',$class->id) }}" class="btn btn-success btn-xs">詳細</a></td>
+                        <td>
+                            <a href="{{ route('admin.class.users',$class->id) }}" class="btn btn-success btn-xs">詳細
+                                <span class="badge bg-danger">
+                                    <?php $cnt = 0; ?>
+                                    @foreach($users_classes as $users_class)
+                                        @if($users_class->course_id == $class->id)
+                                            <?php $cnt++; ?>
+                                        @endif
+                                    @endforeach
+                                    {{ $cnt }}
+                                </span>
+                            </a>
+                        </td>
                         <td>
                             <button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#Modal{{ $class->id }}">削除</button>
                         </td>

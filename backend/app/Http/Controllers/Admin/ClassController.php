@@ -19,7 +19,12 @@ class ClassController extends Controller
             ->orderBy('id', 'desc')
             ->paginate(5);
 
-        return view('admin.class',['classes' => $classes]);
+        $users_classes = UsersCourse::get();
+
+        return view('admin.class',[
+            'classes' => $classes,
+            'users_classes' => $users_classes,
+        ]);
 
     }
 
@@ -96,7 +101,7 @@ class ClassController extends Controller
             $course = Course::find($class_id);
 
             //クラスに所属している生徒を取得
-            $users_classes = UsersCourse::where('user_id',$class_id)
+            $users_classes = UsersCourse::where('course_id',$class_id)
                 ->get();
             $users_id[] = array();
             foreach ($users_classes as $users_class) {
