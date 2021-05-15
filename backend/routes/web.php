@@ -54,6 +54,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/', 'Admin\ClassController@index')->name('top');
         Route::get('/create', 'Admin\ClassController@create')->name('create');
         Route::post('/store', 'Admin\ClassController@store')->name('store');
+        Route::get('/edit/{class_id}', 'Admin\ClassController@edit')->name('edit');
+        Route::post('/update', 'Admin\ClassController@update')->name('update');
+        Route::post('/delete', 'Admin\ClassController@destroy')->name('delete');
     });
 
     Route::prefix('information')->name('information.')->group(function () {
@@ -61,7 +64,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/create', 'Admin\InformationController@create')->name('create');
         Route::post('/store', 'Admin\InformationController@store')->name('store');
         Route::get('/edit/{info_id}', 'Admin\InformationController@edit')->name('edit');
-        Route::post('/edit/', 'Admin\InformationController@update')->name('update');
+        Route::post('/edit', 'Admin\InformationController@update')->name('update');
         Route::post('/delete', 'Admin\InformationController@destroy')->name('delete');
     });
 

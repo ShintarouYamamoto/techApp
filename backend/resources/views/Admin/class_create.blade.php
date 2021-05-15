@@ -20,7 +20,7 @@
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
                     @endforeach
-                </ul>
+                </ul>z
             @endif
             @if (session('message'))
                 <div class="alert alert-success">

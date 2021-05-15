@@ -45,4 +45,45 @@ class ClassController extends Controller
 
         return redirect(route('admin.class.create'))->with('message',$message);
     }
+
+    public function edit($info_id){
+        $class = Course::where('id', $info_id)
+            ->firstOrFail();
+
+        return view('admin.class_edit',['class' => $class]);
+    }
+
+    public function update(ClassRequest $request){
+
+        DB::beginTransaction();
+        try {
+            $class = Course::find($request->id);
+
+            $class->course = $request->input('course');
+            $class->class_id = $request->input('class_id');
+            $class->class_name = $request->input('class_name');
+            $class->save();
+            DB::commit();
+            $message = 'クラスを編集しました。';
+        } catch (\Exception $e) {
+            $message = 'クラスの編集に失敗しました。';
+            DB::rollback();
+        }
+
+        return redirect(route('admin.class.edit',$request->id))->with('message',$message);
+    }
+
+    public function destroy(Request $request){
+
+        DB::beginTransaction();
+        try {
+            Course::destroy($request->id);
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+        }
+
+        return redirect(route('admin.class.top'));
+
+    }
 }

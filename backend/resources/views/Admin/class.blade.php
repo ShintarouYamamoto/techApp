@@ -18,11 +18,11 @@
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th style="width: 5em">ID @sortablelink('id','↕︎')</th>
-                    <th style="width: 10em">コースID</th>
-                    <th style="width: 10em">クラスID</th>
-                    <th style="width: 10em">クラス名</th>
-                    <th style="width: 5em">詳細</th>
+                    <th>ID @sortablelink('id','↕︎')</th>
+                    <th>コースID</th>
+                    <th>クラスID</th>
+                    <th>クラス名</th>
+                    <th colspan="3">詳細</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -32,8 +32,35 @@
                         <td>{{ $class->course }}</td>
                         <td>{{ $class->class_id }}</td>
                         <td>{{ $class->class_name }}</td>
-                        <td><a href="" class="btn btn-primary btn-xs">詳細</a></td>
+                        <td><a href="{{ route('admin.class.edit',$class->id) }}" class="btn btn-primary btn-xs">詳細</a></td>
+                        <td>
+                            <button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#Modal{{ $class->id }}">削除</button>
+                        </td>
                     </tr>
+                    <!-- 削除Modal -->
+                    <div class="modal fade" id="Modal{{ $class->id }}" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="ModalLabel">削除確認</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    {{ $class->class_name }}を削除しますか？
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">いいえ</button>
+                                    <form method="POST" action="{{route('admin.class.delete')}}">
+                                        @csrf
+                                        <input hidden name="id" type="text" value="{{$class->id}}">
+                                        <button type="submit" class="btn btn-danger">削除</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 @endforeach
                 </tbody>
             </table>
