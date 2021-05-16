@@ -59,6 +59,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::prefix('users')->name('users.')->group(function () {
             Route::get('/', 'UsersController@index')->name('top');
             Route::get('/detail/{user_id}', 'UsersController@detail')->name('detail');
+            Route::get('/add_class/{user_id}', 'UsersController@add_class')->name('add_class');
         });
 
         Route::prefix('class')->name('class.')->group(function () {

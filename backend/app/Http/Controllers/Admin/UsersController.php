@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Course;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\UsersCourse;
@@ -30,6 +31,18 @@ class UsersController extends Controller
         return view('admin.user_detail',[
             'user' => $user,
             'user_courses' => $user_courses,
+        ]);
+    }
+
+    public function add_class($user_id){
+
+        $classes = Course::sortable()
+            ->orderBy('id', 'desc')
+            ->paginate(5);
+
+        return view('admin.add_class',[
+            'classes' => $classes,
+            'user_id' => $user_id,
         ]);
     }
 }
