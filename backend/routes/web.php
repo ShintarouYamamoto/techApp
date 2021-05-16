@@ -41,41 +41,56 @@ Route::prefix('main')->name('main.')->group(function () {
 });
 
 
-Route::prefix('admin')->name('admin.')->group(function () {
+// 管理者
+Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
-    Route::get('/', 'Admin\AdminController@index');
+    // ログイン認証関連
+    Auth::routes([
+        'register' => true,
+        'reset'    => false,
+        'verify'   => false
+    ]);
+
+    // ログイン認証後
+    Route::middleware('auth:admin')->group(function () {
+
+        Route::get('/', 'AdminController@index');
 
 
-    Route::prefix('users')->name('users.')->group(function () {
-        Route::get('/', 'Admin\UsersController@index')->name('top');
-        Route::get('/detail/{user_id}', 'Admin\UsersController@detail')->name('detail');
+        Route::prefix('users')->name('users.')->group(function () {
+            Route::get('/', 'UsersController@index')->name('top');
+            Route::get('/detail/{user_id}', 'UsersController@detail')->name('detail');
+        });
+
+        Route::prefix('class')->name('class.')->group(function () {
+            Route::get('/', 'ClassController@index')->name('top');
+            Route::get('/create', 'ClassController@create')->name('create');
+            Route::post('/store', 'ClassController@store')->name('store');
+            Route::get('/edit/{class_id}', 'ClassController@edit')->name('edit');
+            Route::post('/update', 'ClassController@update')->name('update');
+            Route::post('/delete', 'ClassController@destroy')->name('delete');
+            Route::get('/users/{class_id}', 'ClassController@users')->name('users');
+        });
+
+        Route::prefix('information')->name('information.')->group(function () {
+            Route::get('/', 'InformationController@index')->name('top');
+            Route::get('/create', 'InformationController@create')->name('create');
+            Route::post('/store', 'InformationController@store')->name('store');
+            Route::get('/edit/{info_id}', 'InformationController@edit')->name('edit');
+            Route::post('/edit', 'InformationController@update')->name('update');
+            Route::post('/delete', 'InformationController@destroy')->name('delete');
+        });
+
+        Route::prefix('teachers_messages')->name('teachers_messages.')->group(function () {
+            Route::get('/', 'TeachersMessagesController@index')->name('top');
+            Route::get('/create', 'TeachersMessagesController@create')->name('create');
+            Route::post('/store', 'TeachersMessagesController@store')->name('store');
+            Route::get('/edit/{message_id}', 'TeachersMessagesController@edit')->name('edit');
+            Route::post('/edit', 'TeachersMessagesController@update')->name('update');
+            Route::post('/delete', 'TeachersMessagesController@destroy')->name('delete');
+        });
+
     });
 
-    Route::prefix('class')->name('class.')->group(function () {
-        Route::get('/', 'Admin\ClassController@index')->name('top');
-        Route::get('/create', 'Admin\ClassController@create')->name('create');
-        Route::post('/store', 'Admin\ClassController@store')->name('store');
-        Route::get('/edit/{class_id}', 'Admin\ClassController@edit')->name('edit');
-        Route::post('/update', 'Admin\ClassController@update')->name('update');
-        Route::post('/delete', 'Admin\ClassController@destroy')->name('delete');
-        Route::get('/users/{class_id}', 'Admin\ClassController@users')->name('users');
-    });
-
-    Route::prefix('information')->name('information.')->group(function () {
-        Route::get('/', 'Admin\InformationController@index')->name('top');
-        Route::get('/create', 'Admin\InformationController@create')->name('create');
-        Route::post('/store', 'Admin\InformationController@store')->name('store');
-        Route::get('/edit/{info_id}', 'Admin\InformationController@edit')->name('edit');
-        Route::post('/edit', 'Admin\InformationController@update')->name('update');
-        Route::post('/delete', 'Admin\InformationController@destroy')->name('delete');
-    });
-
-    Route::prefix('teachers_messages')->name('teachers_messages.')->group(function () {
-        Route::get('/', 'Admin\TeachersMessagesController@index')->name('top');
-        Route::get('/create', 'Admin\TeachersMessagesController@create')->name('create');
-        Route::post('/store', 'Admin\TeachersMessagesController@store')->name('store');
-        Route::get('/edit/{message_id}', 'Admin\TeachersMessagesController@edit')->name('edit');
-        Route::post('/edit', 'Admin\TeachersMessagesController@update')->name('update');
-        Route::post('/delete', 'Admin\TeachersMessagesController@destroy')->name('delete');
-    });
 });
+

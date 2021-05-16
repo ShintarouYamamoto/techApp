@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -26,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin/home';
+    protected $redirectTo = '/admin/';
 
     /**
      * Create a new controller instance.
@@ -38,8 +39,25 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    protected function guard()
+    {
+        return Auth::guard('admin');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::guard('admin')->logout();
+
+        return $this->loggedOut($request);
+    }
+
     protected function loggedOut(Request $request)
     {
         return redirect(route('main.top'));
+    }
+
+    public function showLoginForm()
+    {
+        return view('admin.auth.login');
     }
 }

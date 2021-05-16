@@ -13,7 +13,7 @@ class AdminTableSeeder extends Seeder
     public function run()
     {
         Admin::create([
-            'name' => 'true@yg.com',
+            'email' => 'true@yg.com',
             'password' => Hash::make('adminlogin'),
         ]);
 
