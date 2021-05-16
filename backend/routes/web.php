@@ -59,6 +59,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::prefix('users')->name('users.')->group(function () {
             Route::get('/', 'UsersController@index')->name('top');
             Route::get('/detail/{user_id}', 'UsersController@detail')->name('detail');
+            Route::get('/add_class/{user_id}', 'UsersController@add_class')->name('add_class');
+            Route::post('/add_class_store/', 'UsersController@add_class_store')->name('add_class_store');
         });
 
         Route::prefix('class')->name('class.')->group(function () {
@@ -69,6 +71,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
             Route::post('/update', 'ClassController@update')->name('update');
             Route::post('/delete', 'ClassController@destroy')->name('delete');
             Route::get('/users/{class_id}', 'ClassController@users')->name('users');
+            Route::post('/withdrawal', 'ClassController@withdrawal')->name('withdrawal');
         });
 
         Route::prefix('information')->name('information.')->group(function () {

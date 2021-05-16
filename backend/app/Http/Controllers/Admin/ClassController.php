@@ -9,7 +9,7 @@ use App\User;
 use App\UsersCourse;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class ClassController extends Controller
 {
@@ -116,6 +116,26 @@ class ClassController extends Controller
         return view('admin.class_users',[
             'class_users' => $class_users,
             'course' => $course,
+            'class_id' => $class_id,
         ]);
     }
+
+    public function withdrawal(Request $request){
+
+        DB::beginTransaction();
+        try {
+            UsersCourse::where('user_id',$request->user_id)
+                ->where('course_id',$request->course_id)
+                ->delete();
+            DB::commit();
+            $message = 'クラスから退会させました。';
+        } catch (\Exception $e) {
+            DB::rollback();
+            $message = '退会処理に失敗しました。';
+        }
+
+        return redirect(route('admin.class.users',$request->course_id))->with('message',$message);
+
+    }
+
 }
