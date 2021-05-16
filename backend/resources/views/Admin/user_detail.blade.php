@@ -43,12 +43,14 @@
                         <td>{{ $user->created_at }}</td>
                         <td>
                             @foreach($user_courses as $user_course)
-                                {{ $user_course->course->class_name }}<br>
+                                <a href="{{ route('admin.class.users',$user_course->course->id) }}">{{ $user_course->course->class_name }}</a><br>
                             @endforeach
                         </td>
                     </tr>
                 </tbody>
             </table>
+            <a class="btn btn-success" href="">クラスに所属させる</a>
+            <a class="btn btn-danger" href="">クラスから退会させる</a>
         </div>
         <!-- /.card-body -->
         <style>
