@@ -71,6 +71,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
             Route::post('/update', 'ClassController@update')->name('update');
             Route::post('/delete', 'ClassController@destroy')->name('delete');
             Route::get('/users/{class_id}', 'ClassController@users')->name('users');
+            Route::post('/withdrawal', 'ClassController@withdrawal')->name('withdrawal');
         });
 
         Route::prefix('information')->name('information.')->group(function () {

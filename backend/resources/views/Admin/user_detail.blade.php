@@ -50,7 +50,6 @@
                 </tbody>
             </table>
             <a class="btn btn-success" href="{{ route('admin.users.add_class', $user->id) }}">クラスに所属させる</a>
-            <a class="btn btn-danger" href="">クラスから退会させる</a>
         </div>
         <!-- /.card-body -->
         <style>
