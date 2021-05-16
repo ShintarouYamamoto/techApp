@@ -1,1 +1,1 @@
-@extends('adminlte::Admin.auth.login')
+@extends('adminlte::auth.login')

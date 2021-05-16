@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -39,14 +40,28 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    protected function loggedOut(Request $request)
+    protected function guard()
     {
-        return redirect(route('main.top'));
+        return Auth::guard('user');
     }
 
     public function showLoginForm()
     {
         return view('member.auth.login');
     }
+
+    public function logout(Request $request)
+    {
+        Auth::guard('user')->logout();
+
+        return $this->loggedOut($request);
+    }
+
+    protected function loggedOut(Request $request)
+    {
+        return redirect(route('main.top'));
+    }
+
+
 
 }
