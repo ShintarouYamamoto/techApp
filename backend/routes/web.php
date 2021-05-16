@@ -60,6 +60,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
             Route::get('/', 'UsersController@index')->name('top');
             Route::get('/detail/{user_id}', 'UsersController@detail')->name('detail');
             Route::get('/add_class/{user_id}', 'UsersController@add_class')->name('add_class');
+            Route::post('/add_class_store/', 'UsersController@add_class_store')->name('add_class_store');
         });
 
         Route::prefix('class')->name('class.')->group(function () {

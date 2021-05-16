@@ -6,7 +6,9 @@ use App\Course;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\UsersCourse;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UsersController extends Controller
 {
@@ -45,4 +47,25 @@ class UsersController extends Controller
             'user_id' => $user_id,
         ]);
     }
+
+    public function add_class_store(Request $request){
+
+        DB::beginTransaction();
+        try {
+            $users_courses = new UsersCourse();
+
+            $users_courses->user_id = $request->input('user_id');
+            $users_courses->course_id = $request->input('course_id');
+
+            $users_courses->save();
+            DB::commit();
+            $message = 'クラスに所属させました。';
+        } catch (\Exception $e){
+            DB::rollback();
+            $message = 'クラスの所属に失敗しました。';
+        }
+
+        return redirect(route('admin.users.add_class',$users_courses->user_id))->with('message',$message);
+    }
+
 }

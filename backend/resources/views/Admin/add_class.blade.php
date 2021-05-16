@@ -15,6 +15,18 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
+            @if(count($errors) > 0)
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            @endif
+            @if (session('message'))
+                <div class="alert alert-success">
+                    {{ session('message') }}
+                </div>
+            @endif
             <table class="table table-bordered">
                 <thead>
                 <tr>
@@ -41,20 +53,21 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="ModalLabel">削除確認</h5>
+                                    <h5 class="modal-title" id="ModalLabel">クラス所属確認</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    {{ $class->class_name }}を削除しますか？
+                                    {{ $class->class_name }}に所属させますか？
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">いいえ</button>
-                                    <form method="POST" action="">
+                                    <form method="POST" action="{{ route('admin.users.add_class_store') }}">
                                         @csrf
-                                        <input hidden name="id" type="text" value="{{$class->id}}">
-                                        <button type="submit" class="btn btn-danger">削除</button>
+                                        <input hidden name="course_id" type="text" value="{{$class->id}}">
+                                        <input hidden name="user_id" type="text" value="{{$user_id}}">
+                                        <button type="submit" class="btn btn-success">所属させる</button>
                                     </form>
                                 </div>
                             </div>
