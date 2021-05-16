@@ -38,7 +38,17 @@ class UsersController extends Controller
 
     public function add_class($user_id){
 
+        $user_courses = UsersCourse::where('user_id',$user_id)
+            ->get();
+
+        $course_id[] = array();
+        foreach ($user_courses as $user_course) {
+            $course_id[] = $user_course->course_id;
+        }
+
         $classes = Course::sortable()
+            ->where('id', '!=', $course_id)
+            ->orWhereNull('id')
             ->orderBy('id', 'desc')
             ->paginate(5);
 
