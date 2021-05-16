@@ -46,7 +46,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
     // ログイン認証関連
     Auth::routes([
-        'register' => true,
         'reset'    => false,
         'verify'   => false
     ]);
