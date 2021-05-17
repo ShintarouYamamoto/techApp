@@ -15,12 +15,14 @@
 
 
     <div class="info-group">
-        <ul>
-            @foreach ($information as $info)
-            <li><a href="{{ url('/member/information', $info->id) }}" class="">[{{ $info->created_at->format('Y/m/d') }}] {{ $info->subject }}</a></li>
-            @endforeach
-        </ul>
-        {{ $information->links() }}
+        <div class="info-list">
+            <ul>
+                @foreach ($information as $info)
+                <li><a href="{{ url('/member/information', $info->id) }}" class="">[{{ $info->created_at->format('Y/m/d') }}] {{ $info->subject }}</a></li>
+                @endforeach
+            </ul>
+        </div>
+        {{ $information->links('vendor.pagination.bootstrap-4') }}
     </div>
 
 

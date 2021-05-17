@@ -16,7 +16,7 @@
         <div class="card-header">
             あなたの情報
         </div>
-        <ul class="list-group list-group-flush">
+        <ul class="list-group list-group-flush text-center">
             <li class="list-group-item"><i class="fas fa-child fa-fw"></i> {{$user->student_lastname}} {{$user->student_firstname}}</li>
             <li class="list-group-item"><i class="fas fa-school fa-fw"></i> あなたのクラスは {{$user_class}} です</li>
             <li class="list-group-item"><i class="fas fa-envelope fa-fw"></i> {{$user->email}}</li>
