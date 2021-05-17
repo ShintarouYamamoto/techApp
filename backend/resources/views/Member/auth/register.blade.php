@@ -36,7 +36,6 @@
 
                 <form method="POST" action="{{ route('member.register') }}">
                     @csrf
-
                     {{--生徒姓--}}{{--生徒名--}}
                     <div class="form-group row">
                         <div class="col-6">
