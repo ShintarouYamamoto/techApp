@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserUpdateRequest extends FormRequest
+class UserRegisterRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -16,11 +16,6 @@ class UserUpdateRequest extends FormRequest
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
     public function rules()
     {
         return [
@@ -35,6 +30,7 @@ class UserUpdateRequest extends FormRequest
             'parent_lastname_kana' => ['required', 'string', 'max:255', 'regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u'],
             'parent_firstname' => ['required', 'string', 'max:255', 'regex:/^[ぁ-んァ-ヶ一-龠々]+$/u'],
             'parent_firstname_kana' => ['required', 'string', 'max:255', 'regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ];
     }
     public function messages()
@@ -58,6 +54,7 @@ class UserUpdateRequest extends FormRequest
             'parent_lastname_kana' => '保護者の姓のフリガナ',
             'parent_firstname' => '保護者の名',
             'parent_firstname_kana' => '保護者の名のフリガナ',
+            'password' => 'パスワード',
         ];
     }
 }

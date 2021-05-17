@@ -5,7 +5,12 @@
 .theme {
     margin-bottom: 60px;
 }
-.theme p{
+.theme ul {
+    color: red;
+    font-weight: bold;
+    list-style: none;
+}
+.theme p {
     color: red;
 }
 .card {
@@ -31,7 +36,7 @@
     transition: 0.5s;
     font-weight: bold;
     font-size: x-large;
-    outline: none!important; 
+    outline: none !important;
 }
 .update-button:hover {
     background-color: cornflowerblue;

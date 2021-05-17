@@ -9,6 +9,11 @@
 .theme {
     margin-bottom: 60px;
 }
+.theme ul {
+    color: red;
+    font-weight: bold;
+    list-style: none;
+}
 .card {
     margin-bottom: 50px;
     width: 500px;
