@@ -30,16 +30,14 @@ a {
 .class-button:hover {
     background-color: rgb(214, 255, 153);
 }
-ul,
-ol {
+.info-list ul {
     color: #668ad8; /*文字色*/
     border: dashed 2px #668ad8; /*破線 太さ 色*/
     background: #f1f8ff; /*背景色*/
     padding: 0.5em 0.5em 0.5em 2em;
 }
 
-ul li,
-ol li {
+.info-list ul li {
     line-height: 1.5;
     padding: 0.5em 0;
 }
