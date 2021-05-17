@@ -21,7 +21,7 @@ class UserController extends Controller
         try {
             $user_course = UsersCourse::where('user_id', Auth::id())->firstOrFail();
 
-            $user_class = Course::where('course', 1)->where('id', $user_course->course_id)->firstOrFail();
+            $user_class = Course::where('course', 1)->where('id', $user_course->course_name)->firstOrFail();
 
             $user_class = $user_class->class_id;
         } catch (\Exception $e) {
