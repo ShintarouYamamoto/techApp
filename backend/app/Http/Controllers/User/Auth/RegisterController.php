@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\UserRegisterRequest;
 
 
 class RegisterController extends Controller
@@ -55,18 +56,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'student_lastname' => ['required', 'string', 'max:255'],
-            'student_lastname_kana' => ['required', 'string', 'max:255', 'regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u'],
-            'student_firstname' => ['required', 'string', 'max:255'],
-            'student_firstname_kana' => ['required', 'string','max:255', 'regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u'],
-            'email' => ['required', 'string', 'email', 'max:255'],
-            'address' => ['required', 'string', 'max:255'],
-            'tel_no' => ['required', 'string', 'max:255'],
-            'parent_lastname' => ['required', 'string', 'max:255'],
-            'parent_lastname_kana' => ['required', 'string','max:255', 'regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u'],
-            'parent_firstname' => ['required', 'string', 'max:255'],
-            'parent_firstname_kana' => ['required', 'string','max:255', 'regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            
         ]);
     }
 

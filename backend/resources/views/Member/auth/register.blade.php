@@ -26,6 +26,13 @@
 
         <div class="theme text-center">
             <h1>登録ページ</h1>
+            @if(count($errors) > 0)
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+            @endif
         </div>
 
         <div class="card border-dark mb-3 mx-auto">
