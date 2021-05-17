@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-    <title>ログインページ</title>
+    <title>会員登録ページ</title>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Styles -->
