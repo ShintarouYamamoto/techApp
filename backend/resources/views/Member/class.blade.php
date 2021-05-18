@@ -7,24 +7,29 @@
 @endsection
 
 @section('content')
-<div class="container">
+<div class="container main-content">
 
-    <div>
-        <h1 class="text-center">{{$user_class->class}}クラスのお部屋</h1>
+    <div class="theme">
+        <h1 class="text-center">{{$user_class->class_name}}のクラスのお部屋</h1>
     </div>
 
-    <div>
+    <div class="container message-group">
         @foreach ($class_messages as $class_message)
-        <div class="list-group">
-            <p>{{$class_message->subject}}</p>
+        <div class="balloon_r">
+            <div class="faceicon">
+                <img src="{{ asset('/images/teacher.png') }}" alt="">
+            </div>
+            <div class="says">
+                <p>{{$class_message->content}}</p>
+            </div>
         </div>
         @endforeach
-        {{ $class_messages->links() }}
+        {{ $class_messages->links('vendor.pagination.original') }}
     </div>
-
-    <div>
+    <div class="button-group text-center">
         <a class="return-button" href="{{ route('member.top') }}" role="button">戻る</a>
     </div>
 
 </div>
+
 @endsection
