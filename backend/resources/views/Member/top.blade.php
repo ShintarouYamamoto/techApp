@@ -22,7 +22,7 @@
                 @endforeach
             </ul>
         </div>
-        {{ $information->links('vendor.pagination.bootstrap-4') }}
+        {{ $information->links('vendor.pagination.original') }}
     </div>
 
 
