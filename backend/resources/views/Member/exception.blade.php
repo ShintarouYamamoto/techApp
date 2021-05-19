@@ -3,22 +3,15 @@
 @section('title','エラーページ')
 
 @section('css')
+<link rel="stylesheet" href="{{ asset('css/Member/exception.css') }}">
 @endsection
 
 @section('content')
-<div class="container">
+<div class="container main-content">
 
-    <div>
-        <h1>Member.top->Member.exception/h1>
+    <div class="theme text-center">
+        <h1>クラスが未配属です。</h1>
+        <p>受講開始日が近づいても未配属の場合、申し訳ありませんがお問い合わせください。</p>
     </div>
-
-    <div>
-        <p>{{$message}}</p>
-    </div>
-
-    <div>
-        <a class="btn btn-primary" href="{{ route('member.top') }}" role="button">戻る</a>
-    </div>
-
 </div>
 @endsection

@@ -22,7 +22,7 @@
     font-weight: bold;
     font-size: x-large;
 }
-.edit-button:hover{
+.edit-button:hover {
     background-color: cornflowerblue;
 }
 .return-button {
@@ -34,6 +34,24 @@
     font-weight: bold;
     font-size: x-large;
 }
-.return-button:hover{
+.return-button:hover {
     background-color: cornflowerblue;
+}
+
+@media screen and (max-width: 480px) {
+    .main-content {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .theme {
+        margin-bottom: 50px;
+    }
+    .card {
+        margin-bottom: 50px;
+        width: 300px;
+    }
+    .card-header {
+        font-weight: bold;
+        font-size: large;
+    }
 }
