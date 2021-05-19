@@ -41,7 +41,9 @@
                     <div class="form-group">
                         <label>提示クラス</label>
                         <select name="class_to" class="form-control">
-                            <option value="1">クラス1</option>
+                            @foreach($courses as $course)
+                                <option value="{{$course->id}}">{{$course->class_name}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
