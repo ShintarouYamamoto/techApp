@@ -26,8 +26,8 @@
     </div>
 
 
-    <div class="class-group row">
-        <a class="class-button text-center col" href="{{ route('member.class') }}" role="button">受講する</a>
+    <div class="class-group text-center">
+        <a class="class-button" href="{{ route('member.class') }}" role="button">受講する</a>
     </div>
 
     <div class=""></div>
