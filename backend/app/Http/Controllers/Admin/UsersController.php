@@ -38,19 +38,17 @@ class UsersController extends Controller
 
     public function add_class($user_id){
 
-        $user_courses = UsersCourse::where('user_id',$user_id)
+        $course_id = UsersCourse::where('user_id',$user_id)
+            ->select('course_id')
             ->get();
 
-        $course_id[] = array();
-        foreach ($user_courses as $user_course) {
-            $course_id[] = $user_course->course_id;
-        }
 
         $classes = Course::sortable()
-            ->where('id', '!=', $course_id)
+            ->whereNotIn('id', $course_id)
             ->orWhereNull('id')
             ->orderBy('id', 'desc')
             ->paginate(5);
+
 
         return view('admin.add_class',[
             'classes' => $classes,
@@ -75,7 +73,7 @@ class UsersController extends Controller
             $message = 'クラスの所属に失敗しました。';
         }
 
-        return redirect(route('admin.users.add_class',$users_courses->user_id))->with('message',$message);
+        return redirect(route('admin.users.detail',$users_courses->user_id))->with('message',$message);
     }
 
 }

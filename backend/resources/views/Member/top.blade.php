@@ -30,7 +30,10 @@
         <a class="class-button" href="{{ route('member.class') }}" role="button">受講する</a>
     </div>
 
-    <div class=""></div>
+    <div class="class-group text-center">
+        <a class="class-button" href="mailto:info&#64;example.com?subject=授業に関しての質問&amp;body={{Auth::user()->student_lastname}}%20{{Auth::user()->student_firstname}}さんからの質問です。%0d%0a以下に質問内容をご記入ください。" role="button">質問する</a>
+    </div>
+
 
 </div>
 @endsection

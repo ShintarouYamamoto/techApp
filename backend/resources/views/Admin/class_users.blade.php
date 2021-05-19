@@ -70,7 +70,7 @@
                                         @csrf
                                         <input hidden name="user_id" type="text" value="{{$user->id}}">
                                         <input hidden name="course_id" type="text" value="{{$class_id}}">
-                                        <button type="submit" class="btn btn-danger">削除</button>
+                                        <button type="submit" class="btn btn-danger">退会</button>
                                     </form>
                                 </div>
                             </div>

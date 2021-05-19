@@ -42,7 +42,9 @@
                     <label>提示クラス</label>
                     <select name="info_to" class="form-control">
                         <option value="0">全体</option>
-                        <option>クラス1</option>
+                        @foreach($courses as $course)
+                            <option value="{{$course->id}}">{{$course->class_name}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>

@@ -15,6 +15,18 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
+            @if(count($errors) > 0)
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>z
+            @endif
+            @if (session('message'))
+                <div class="alert alert-success">
+                    {{ session('message') }}
+                </div>
+            @endif
             <table class="row">
                 <thead>
                 <tr>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Course;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\InformationRequest;
 use App\Information;
@@ -21,8 +22,8 @@ class InformationController extends Controller
     }
 
     public function create(){
-
-        return view('admin.information_create');
+        $courses = Course::get();
+        return view('admin.information_create',['courses' => $courses]);
     }
 
     public function store(InformationRequest $request){

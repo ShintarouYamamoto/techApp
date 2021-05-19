@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Course;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TeachersMessageRequest;
 use App\TeachersMessage;
@@ -21,8 +22,8 @@ class TeachersMessagesController extends Controller
     }
 
     public function create(){
-
-        return view('admin.teachers_messages_create');
+        $courses = Course::get();
+        return view('admin.teachers_messages_create',['courses' => $courses]);
     }
 
     public function store(TeachersMessageRequest $request){
