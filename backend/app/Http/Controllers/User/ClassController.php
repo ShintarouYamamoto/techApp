@@ -20,10 +20,8 @@ class ClassController extends Controller
             $user_class = Course::where('course', 1) //TODO:コースが増えた時には受け取った値を入れる
                 ->where('id', $user_course->course_id)
                 ->firstOrFail();
-
         } catch (\Exception $e) {
-            $message = 'クラスが存在していません。お問い合わせ下さい。';
-            return view('Member.exception', ['message' => $message]);
+            return view('Member.exception');
         }
 
         $class_messages = TeachersMessage::where('class_to', $user_class->class_id)->orderBy('created_at', 'desc')->paginate(6);
