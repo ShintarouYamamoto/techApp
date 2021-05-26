@@ -6,11 +6,17 @@
 @endsection
 
 @section('content')
-<div>
-    <h1>教室紹介ページ</h1>
-</div>
-<div>
-    <a href={{ route('main.buy') }}>申し込みページへ</a>
-    <a href={{ route('member.login') }}>login</a>
+<div class="main-wrapper">
+    <div class="top-wrapper">
+
+    </div>
+
+    <div class="main-content">
+        @include('learning_system')
+        @include('description')
+        @include('lecturer_introduction')
+        @include('fee')
+        @include('questions')
+    </div>
 </div>
 @endsection
