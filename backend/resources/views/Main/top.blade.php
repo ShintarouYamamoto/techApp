@@ -12,11 +12,11 @@
     </div>
 
     <div class="main-content">
-        @include('learning_system')
-        @include('description')
-        @include('lecturer_introduction')
-        @include('fee')
-        @include('questions')
+        @include('Parts.learning_system')
+        @include('Parts.description')
+        @include('Parts.lecturer_introduction')
+        @include('Parts.fee')
+        @include('Parts.questions')
     </div>
 </div>
 @endsection
