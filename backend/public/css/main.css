@@ -3,7 +3,7 @@
 }
 
 .main-content{
-    margin:75px;
+    margin: 2em;
 }
 
 .content-title{
@@ -18,7 +18,7 @@
 }
 
 .contents{
-    background-color:rgba(255,255,255,0.8);
+    background-color:rgba(5,255,255,0.8);//TODO::背景画像がまだないので分かりやすいように水色にしてます
 }
 
 
