@@ -1,0 +1,24 @@
+.teacher-introduce-title{
+    font-size: 2.4em;
+    text-align: center;
+}
+
+.teacher-image{
+    padding: 0 80px;
+}
+
+.teacher-image img{
+    width: 100%;
+}
+
+.teacher-message {
+    padding: 0.5em 2em;
+    margin: 2em 0;
+    background: #FFF;
+    border: solid 3px yellow;
+    border-radius: 50px;
+}
+.teacher-message p {
+    margin: 0;
+    padding: 0;
+}

@@ -3,6 +3,7 @@
 @section('title','トップ')
 
 @section('css')
+    <link rel="stylesheet" href="{{ asset('css/Parts/teacher_introduce.css') }}">
 @endsection
 
 @section('content')
