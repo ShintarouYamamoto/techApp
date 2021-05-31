@@ -1,0 +1,18 @@
+.header-login{
+    background-color: #4DD599;
+}
+
+.header-apply{
+    background-color: yellow;
+}
+
+.header-btn{
+    height: 4em;
+    width: 7em;
+    text-align:center;
+    padding:20px 0;
+}
+
+.navbar{
+    padding: 0;
+}
