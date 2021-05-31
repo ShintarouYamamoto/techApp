@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('title','トップ')
 
@@ -9,7 +9,9 @@
 @section('content')
 <div class="main-wrapper">
     <div class="top-wrapper">
+        <div class="top-image">
 
+        </div>
     </div>
 
     <div class="main-content">

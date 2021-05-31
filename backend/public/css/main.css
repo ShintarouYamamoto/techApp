@@ -21,4 +21,11 @@
     background-color:rgba(5,255,255,0.8);//TODO::背景画像がまだないので分かりやすいように水色にしてます
 }
 
+.top-image{
+    background-image: url("/images/main-top.png");
+    height: 700px;
+    background-repeat: no-repeat;
+}
+
+
 
