@@ -1,0 +1,36 @@
+.question-img {
+    width: 650px;
+    height: auto;
+}
+.question {
+    position: relative;
+    text-align: center;
+}
+.question-text {
+    font-weight: bold;
+    color: black;
+    position: absolute;
+    top: 14%;
+    left: 29%;
+    margin: 0;
+    padding: 0;
+}
+.answer-text {
+    font-weight: bold;
+    color: black;
+    position: absolute;
+    top: 59%;
+    left: 29%;
+    margin: 0;
+    padding: 0;
+}
+.tel-img {
+    width: 70%;
+    max-width: 100%;
+    height: auto;
+}
+.mail-img {
+    width: 70%;
+    max-width: 100%;
+    height: auto;
+}

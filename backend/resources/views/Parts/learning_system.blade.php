@@ -6,7 +6,7 @@
         <div class="step">
             <img class="step-img" src="{{ asset('/images/step1.png') }}" alt="">
             <p class="step-theme">見て学ぶ</p>
-            <p class=step-text>これはサンプルです</p>
+            <p class="step-text">これはサンプルです</p>
         </div>
     </div>
     <div class="row justify-content-center pt-4">
@@ -16,7 +16,7 @@
         <div class="step">
             <img class="step-img" src="{{ asset('/images/step2.png') }}" alt="">
             <p class="step-theme">考えて学ぶ</p>
-            <p class=step-text>これはサンプルです</p>
+            <p class="step-text">これはサンプルです</p>
         </div>
     </div>
     <div class="row justify-content-center pt-4">
@@ -26,7 +26,7 @@
         <div class="step">
             <img class="step-img" src="{{ asset('/images/step3.png') }}" alt="">
             <p class="step-theme">作って学ぶ</p>
-            <p class=step-text>これはサンプルです</p>
+            <p class="step-text">これはサンプルです</p>
         </div>
     </div>
     <div class="row justify-content-center align-items-center py-4">
