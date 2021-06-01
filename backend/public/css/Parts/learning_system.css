@@ -1,0 +1,20 @@
+.step-img {
+    width: 400px !important;
+    height: auto !important;
+}
+.arrow-img {
+    width: 80px !important;
+    height: auto !important;
+}
+.cracker-img {
+    width: 200px !important;
+    height: auto !important;
+}
+.chick-img {
+    width: 180px !important;
+    height: auto !important;
+}
+.learning-message p {
+    font-size: x-large;
+    font-weight: bold;
+}
