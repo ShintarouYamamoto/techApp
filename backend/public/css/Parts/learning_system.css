@@ -31,22 +31,17 @@
     font-weight: bold;
     color: white;
     position: absolute;
-    top: 25%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    top: 16%;
+    left: 46%;
     margin: 0;
     padding: 0;
 }
 .step-text {
-    color: black;
     position: absolute;
-    top: 50%;
-    left: 51%;
-    -ms-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    color: black;
+    font-weight: bold;
+    top: 43%;
+    left: 47%;
     margin: 0;
     padding: 0;
 }
