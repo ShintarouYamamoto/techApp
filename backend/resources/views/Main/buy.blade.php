@@ -8,6 +8,6 @@
 @section('content')
 <div>
     <h1>申し込みページ stripe実装予定</h1>
-    <a href={{ route('main.top') }}>戻る</a>
+    <a href="{{ route('main.top') }}">戻る</a>
 </div>
 @endsection

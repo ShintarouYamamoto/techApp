@@ -1,20 +1,52 @@
 .step-img {
-    width: 400px !important;
-    height: auto !important;
+    width: 400px;
+    height: auto;
 }
 .arrow-img {
-    width: 80px !important;
-    height: auto !important;
+    width: 80px;
+    height: auto;
 }
 .cracker-img {
-    width: 200px !important;
-    height: auto !important;
+    width: 200px;
+    height: auto;
 }
-.chick-img {
-    width: 180px !important;
-    height: auto !important;
+.chick1-img {
+    width: 17%;
+    max-width: 100%;
+    height: auto;
 }
 .learning-message p {
+    letter-spacing: 0.2em;
     font-size: x-large;
     font-weight: bold;
+}
+
+.step {
+    position: relative;
+    text-align: center;
+}
+
+.step-theme {
+    font-size: x-large;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+}
+.step-text {
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 51%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
 }
