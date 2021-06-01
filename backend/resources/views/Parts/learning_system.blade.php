@@ -1,40 +1,27 @@
 <div class="content-title">
-    <p>講師紹介</p>
+    <p>学習システム</p>
 </div>
 <div class="contents">
-    <div class="teacher-introduce-title py-5">
-        <p>
-            現役の学生エンジニアが教えるから分かりやすい!!
-        </p>
+    <div class="row justify-content-center pt-4">
+        <img class="step-img" src="{{ asset('/images/step1.png') }}" alt="">
     </div>
-    <div class="teacher-introduce-message">
-        <div class="teacher-wrapper">
-            <div class="row mx-0 px-5">
-                <div class="teacher-image col-sm-4 col-12">
-                    <img src="{{ asset('/images/teacher_image01.png') }}" alt="">
-                </div>
-                <div class="teacher-message col-sm-8 col-12">
-                    <p>
-                        どうも！真太郎です！どうも！真太郎です！どうも！真太郎です！どうも！真太郎です！<br>
-                        どうも！真太郎です！どうも！真太郎です！どうも！真太郎です！どうも！真太郎です！<br>
-                        どうも！真太郎です！どうも！真太郎です！どうも！真太郎です！どうも！真太郎です！<br>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="teacher-wrapper row mx-0">
-            <div class="row mx-0 px-5">
-                <div class="teacher-message col-sm-8 col-12">
-                    <p>
-                        どうも！真太郎です！どうも！真太郎です！どうも！真太郎です！どうも！真太郎です！<br>
-                        どうも！真太郎です！どうも！真太郎です！どうも！真太郎です！どうも！真太郎です！<br>
-                        どうも！真太郎です！どうも！真太郎です！どうも！真太郎です！どうも！真太郎です！<br>
-                    </p>
-                </div>
-                <div class="teacher-image col-sm-4 col-12">
-                    <img src="{{ asset('/images/teacher_image01.png') }}" alt="">
-                </div>
-            </div>
+    <div class="row justify-content-center pt-4">
+        <img class="arrow-img" src="{{ asset('/images/arrow.png') }}" alt="">
+    </div>
+    <div class="row justify-content-center pt-4">
+        <img class="step-img" src="{{ asset('/images/step2.png') }}" alt="">
+    </div>
+    <div class="row justify-content-center pt-4">
+        <img class="arrow-img" src="{{ asset('/images/arrow.png') }}" alt="">
+    </div>
+    <div class="row justify-content-center pt-4">
+        <img class="step-img" src="{{ asset('/images/step3.png') }}" alt="">
+    </div>
+    <div class="row justify-content-center align-items-center py-4">
+        <img class="col-8 chick-img" src="{{ asset('/images/chick1.png') }}" alt="">
+        <div class="col-4 learning-message">
+            <p>現役学生エンジニアが</p>
+            <p>３ステップで教えます</p>
         </div>
     </div>
 </div>
