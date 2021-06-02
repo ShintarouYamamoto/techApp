@@ -10,19 +10,28 @@
 @endsection
 
 @section('content')
-<div class="main-wrapper">
-    <div class="top-wrapper">
-        <div class="top-image">
+    <div class="main-wrapper">
+        <div class="top-wrapper">
+            <div class="top-image">
 
+            </div>
         </div>
-    </div>
 
-    <div class="main-content">
-        @include('Parts.learning_system')
-        @include('Parts.description')
-        @include('Parts.lecturer_introduction')
-        @include('Parts.fee')
-        @include('Parts.questions')
+        <div class="main-content">
+            @include('Parts.learning_system')
+        </div>
+        <div class="main-content">
+            @include('Parts.description')
+        </div>
+        <div class="main-content">
+            @include('Parts.teacher_introduction')
+        </div>
+        <div class="main-content">
+            @include('Parts.fee')
+        </div>
+        <div class="main-content">
+            @include('Parts.questions')
+        </div>
+
     </div>
-</div>
 @endsection

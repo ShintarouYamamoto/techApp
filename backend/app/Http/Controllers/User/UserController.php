@@ -5,12 +5,12 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
-use Auth;
 use App\User;
 use App\Course;
 use App\UsersCourse;
 use App\Http\Requests\UserUpdateRequest;
 use DB;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
