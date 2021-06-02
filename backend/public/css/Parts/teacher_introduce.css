@@ -3,6 +3,11 @@
     text-align: center;
 }
 
+.teacher-content{
+    margin: 0 30px;
+    padding: 0 30px;
+}
+
 .teacher-image{
     padding: 0 80px;
 }
@@ -21,4 +26,23 @@
 .teacher-message p {
     margin: 0;
     padding: 0;
+    font-size: 1em;
+}
+
+@media all and (min-width: 1024px) and (max-width: 1280px) { }
+
+@media all and (min-width: 768px) and (max-width: 1024px) { }
+
+@media all and (min-width: 480px) and (max-width: 768px) { }
+
+@media all and (max-width: 480px) {
+    .teacher-introduce-title{
+        font-size: 1.3em;
+        text-align: center;
+    }
+
+    .teacher-content{
+        margin: 0 2px;
+        padding: 0 2px;
+    }
 }
