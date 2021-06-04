@@ -13,7 +13,14 @@
     <div class="main-wrapper">
         <div class="top-wrapper">
             <div class="top-image">
-
+                <div class="top-subjects">
+                    <div class="top-title">
+                        <p>お家<br>DE学習</p>
+                    </div>
+                    <div class="top-sub">
+                        <p>短期集中でプログラミング能を作りませんか?</p>
+                    </div>
+                </div>
             </div>
         </div>
 
