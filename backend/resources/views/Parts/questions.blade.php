@@ -24,8 +24,16 @@
         </div>
     </div>
     <div class="row justify-content-center py-4">
-        <div class="col-7 text-center"><img class="tel-img" src="{{ asset('/images/tel.png') }}" alt=""></div>
-        <div class="col-4 text-center"><img class="mail-img" src="{{ asset('/images/mail.png') }}" alt=""></div>
+        <div class="col-7">
+            <div class="text-center">
+                <a href=""><img class="tel-img" src="{{ asset('/images/tel.png') }}" alt=""></a>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="text-center">
+                <a href=""><img class="mail-img" src="{{ asset('/images/mail.png') }}" alt=""></a>
+            </div>
+        </div>
         <div class="col-1"></div>
     </div>
 

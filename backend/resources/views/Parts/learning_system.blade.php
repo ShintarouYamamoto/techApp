@@ -37,3 +37,34 @@
         </div>
     </div>
 </div>
+<div class="contents part2">
+    <div class="row justify-content-center py-5">
+        <div class="col-7 text-center"><img class="child1-img" src="{{ asset('/images/child1.png') }}" alt=""></div>
+        <div class="col-4 py-5">
+            <p class="child1-text"><span class="decoration">一回目の授業からゲームが完成！</span></p>
+            <p class="child1-text"><span class="decoration">楽しいから続けられる！</span></p>
+            <div>
+                <p>これはサンプルです<br>
+                    これはサンプルです<br>
+                    これはサンプルです</p>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row justify-content-center text-center">
+        <p class="learning-introduce-text">全4回の90分授業</p>
+        <p class="learning-introduce-text">月に2回の短期集中</p>
+    </div>
+    <div class="row justify-content-center py-5">
+        <div class="text-center">
+            <a href=""><img class="register_new-img" src="{{ asset('/images/register_new.png') }}" alt=""></a>
+        </div>
+    </div>
+    <div class="row justify-content-center text-center">
+        <p class="learning-introduce-text"><span class="decoration">必要なものは酒と女だけ</span></p>
+    </div>
+    <div class="row justify-content-center text-center">
+
+    </div>
+
+</div>
