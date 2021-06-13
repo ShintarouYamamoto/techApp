@@ -13,7 +13,7 @@
         <div class="col-1"></div>
     </div>
     <div class="row justify-content-center py-3">
-        <a class="text-center" href="{{ route('main.buy') }}"><img class="register-img" src="{{ asset('/images/register.png') }}" alt=""></a>
+        <a class="text-center" href="{{ route('main.promotion') }}"><img class="register-img" src="{{ asset('/images/register.png') }}" alt=""></a>
     </div>
 
 </div>
