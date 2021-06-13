@@ -37,6 +37,9 @@ Route::namespace('User')->prefix('member')->name('member.')->group(function () {
 
 Route::prefix('main')->name('main.')->group(function () {
     Route::get('/', 'Main\MainController@index')->name('top');
+    Route::get('/promotion', 'Main\MainController@promotion')->name('promotion');
+    Route::get('/purchase_completed', 'Main\MainController@purchaseCompleted')->name('purchase_completed');
+    Route::post('/purchase_completed', 'Main\MainController@purchaseCompletedStore')->name('purchase_completed');
     Route::get('/buy', 'Main\MainController@buy')->name('buy');
 });
 

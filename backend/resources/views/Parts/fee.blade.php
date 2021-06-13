@@ -14,7 +14,9 @@
         <img class="col-11 fee-img" src="{{ asset('/images/fee.png') }}" alt="">
         <div class="col-1"></div>
     </div>
+
     <div class="row justify-content-center py-5">
         <div class="text-center"><a href="{{ route('main.buy') }}"><img class="register-img" src="{{ asset('/images/register_rightnow.png') }}" alt=""></a></div>
     </div>
 </div>
+
